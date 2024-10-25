@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class brillo_logica : MonoBehaviour
+public class BrilloLogica : MonoBehaviour
 {
 
     public Slider slider;

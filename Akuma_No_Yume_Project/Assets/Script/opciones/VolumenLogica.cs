@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class volume_logic : MonoBehaviour
+public class VolumenLogica : MonoBehaviour
 {
 
     public Slider slider;
