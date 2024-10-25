@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pausePanel; // El panel de pausa en la UI
+    public GameObject pausePanel; // Panel de pausa
+    public GameObject mapPanel;   // Panel de mapa
     private bool isPaused = false; // Estado de pausa
 
     void Update()
     {
-        // Pausar con la tecla "Esc"
+        // Tecla "Esc" para pausar o reanudar
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
         }
     }
 
-    // Método que se puede usar para pausar y reanudar el juego
+    // Método para pausar y reanudar
     public void TogglePause()
     {
         if (isPaused)
@@ -31,15 +32,24 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        pausePanel.SetActive(true); // Activa el panel de pausa
-        Time.timeScale = 0f;        // Congela el tiempo del juego
+        pausePanel.SetActive(true);
+        Time.timeScale = 0f;
         isPaused = true;
     }
 
     public void ResumeGame()
     {
-        pausePanel.SetActive(false); // Desactiva el panel de pausa
-        Time.timeScale = 1f;         // Restaura el tiempo normal del juego
+        pausePanel.SetActive(false);
+        mapPanel.SetActive(false); // Oculta el mapa si estaba abierto
+        Time.timeScale = 1f;
         isPaused = false;
+    }
+
+    // Método para abrir el mapa y pausar
+    public void OpenMap()
+    {
+        mapPanel.SetActive(true);   // Muestra el mapa
+        Time.timeScale = 0f;        // Pausa el juego
+        isPaused = true;
     }
 }
