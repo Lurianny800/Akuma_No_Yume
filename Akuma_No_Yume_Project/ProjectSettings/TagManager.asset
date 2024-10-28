@@ -3,18 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Torre
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Grid
+  - Botones
   - Water
   - UI
-  - Suelo
-  - Player
-  - Torre
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -41,7 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: suelo
-    uniqueID: 2054429781
     locked: 0

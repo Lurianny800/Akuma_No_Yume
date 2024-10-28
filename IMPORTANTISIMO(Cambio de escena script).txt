@@ -1,0 +1,2 @@
+ScenceManager.LoadScene(Start_lvl);
+//Entre parentesis escribes "Nombre Escena"
