@@ -10,6 +10,8 @@ public class HUB_Manager : MonoBehaviour
     public int PuntosTotales { get; private set; }
 
     private int vidas = 4;
+    private float cooldownCuracion = 5f; // Cooldown de 5 segundos
+    private float tiempoUltimaCuracion;
 
     private void Awake()
     {
@@ -20,6 +22,13 @@ public class HUB_Manager : MonoBehaviour
         else
         {
             Debug.Log("Cuidado! Mas de un GameManager en escena.");
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            IntentarCurar();
         }
     }
 
@@ -41,11 +50,28 @@ public class HUB_Manager : MonoBehaviour
 
         vidasHUB.DesactivarVida(vidas);
     }
+    private void IntentarCurar()
+    {
+        // Verificar si ha pasado el cooldown
+        if (Time.time - tiempoUltimaCuracion >= cooldownCuracion)
+        {
+            bool vidaRecuperada = RecuperarVida();
+            if (vidaRecuperada)
+            {
+                tiempoUltimaCuracion = Time.time; // Reinicia el tiempo del cooldown
+            }
+        }
+        else
+        {
+            Debug.Log("Curación en cooldown. Espera un poco más.");
+        }
+    }
 
     public bool RecuperarVida()
     {
-        if (vidas == 3)
+        if (vidas == 4)
         {
+            Debug.Log("Ya tienes el máximo de vidas.");
             return false;
         }
 

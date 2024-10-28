@@ -10,7 +10,7 @@ public class Vidas_HUB : MonoBehaviour
 
     void Update()
     {
-        puntos.text = HUB_Manager.Instance.PuntosTotales.ToString();
+        //puntos.text = HUB_Manager.Instance.PuntosTotales.ToString();
     }
 
     public void ActualizarPuntos(int puntosTotales)
