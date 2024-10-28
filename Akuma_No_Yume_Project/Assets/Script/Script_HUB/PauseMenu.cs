@@ -15,6 +15,12 @@ public class PauseMenu : MonoBehaviour
         {
             TogglePause();
         }
+
+        // Tecla "M" para abrir o cerrar el mapa
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            ToggleMap();
+        }
     }
 
     // Método para pausar y reanudar
@@ -41,15 +47,24 @@ public class PauseMenu : MonoBehaviour
     {
         pausePanel.SetActive(false);
         mapPanel.SetActive(false); // Oculta el mapa si estaba abierto
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; // Restaura el tiempo normal del juego
         isPaused = false;
     }
 
     // Método para abrir el mapa y pausar
-    public void OpenMap()
+    public void ToggleMap()
     {
-        mapPanel.SetActive(true);   // Muestra el mapa
-        Time.timeScale = 0f;        // Pausa el juego
-        isPaused = true;
+        if (mapPanel.activeSelf)
+        {
+            mapPanel.SetActive(false); // Oculta el mapa
+            Time.timeScale = 1f;       // Reanuda el juego
+            isPaused = false;
+        }
+        else
+        {
+            mapPanel.SetActive(true);  // Muestra el mapa
+            Time.timeScale = 0f;       // Pausa el juego
+            isPaused = true;
+        }
     }
 }
