@@ -6,8 +6,14 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel; // Panel de pausa
     public GameObject mapPanel;   // Panel de mapa
+
+    private Animator pauseAnimator; // Referencia al Animator del panel de pausa
     private bool isPaused = false; // Estado de pausa
 
+    void Start()
+    {
+        pauseAnimator = pausePanel.GetComponent<Animator>();
+    }
     void Update()
     {
         // Tecla "Esc" para pausar o reanudar
@@ -38,17 +44,26 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        pausePanel.SetActive(true);
+        Debug.Log("PauseGame");
+        pausePanel.SetActive(true); // Muestra el panel antes de animarlo
+        pauseAnimator.Play("PausePanelSlideIn"); // Reproduce la animación de entrada
+        Debug.Log("PlaySlideIn");
         Time.timeScale = 0f;
         isPaused = true;
+        
     }
 
     public void ResumeGame()
     {
-        pausePanel.SetActive(false);
+        pauseAnimator.Play("PausePanelSlideOut"); // Reproduce la animación de salida
+        Invoke("HidePausePanel", 1f); // Retrasa el ocultado del panel hasta que termine la animación
         mapPanel.SetActive(false); // Oculta el mapa si estaba abierto
         Time.timeScale = 1f; // Restaura el tiempo normal del juego
         isPaused = false;
+    }
+    void HidePausePanel()
+    {
+        pausePanel.SetActive(false); // Oculta el panel tras la animación de salida
     }
 
     // Método para abrir el mapa y pausar
