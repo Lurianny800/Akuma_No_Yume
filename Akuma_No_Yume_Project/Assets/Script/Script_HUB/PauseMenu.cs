@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        pauseAnimator = pausePanel.GetComponent<Animator>();
+        
     }
     void Update()
     {
@@ -44,13 +44,13 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        pauseAnimator = pausePanel.GetComponent<Animator>();
         Debug.Log("PauseGame");
         pausePanel.SetActive(true); // Muestra el panel antes de animarlo
         pauseAnimator.Play("PausePanelSlideIn"); // Reproduce la animación de entrada
         Debug.Log("PlaySlideIn");
         Time.timeScale = 0f;
-        isPaused = true;
-        
+        isPaused = true;        
     }
 
     public void ResumeGame()
@@ -58,6 +58,7 @@ public class PauseMenu : MonoBehaviour
         pauseAnimator.Play("PausePanelSlideOut"); // Reproduce la animación de salida
         Invoke("HidePausePanel", 1f); // Retrasa el ocultado del panel hasta que termine la animación
         mapPanel.SetActive(false); // Oculta el mapa si estaba abierto
+        Debug.Log("PlaySlideOut");
         Time.timeScale = 1f; // Restaura el tiempo normal del juego
         isPaused = false;
     }
