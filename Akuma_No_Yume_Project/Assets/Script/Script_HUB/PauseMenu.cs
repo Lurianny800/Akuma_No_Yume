@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        
+        pauseAnimator = pausePanel.GetComponent<Animator>();
     }
     void Update()
     {
@@ -44,7 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        pauseAnimator = pausePanel.GetComponent<Animator>();
+        pauseGame
         Debug.Log("PauseGame");
         pausePanel.SetActive(true); // Muestra el panel antes de animarlo
         pauseAnimator.Play("PausePanelSlideIn"); // Reproduce la animación de entrada
