@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
@@ -8,8 +9,24 @@ public class player : MonoBehaviour
     private bool moving;
     public Vector2 input;
 
-    private void Update()
+    [Header("Health")]
+    [SerializeField] private int maxHealth = 10;
+    [SerializeField] private int currentHealth;
+
+    private void Start()
     {
+        currentHealth = maxHealth;
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            currentHealth--;
+        }
+    }
+
+    private void Update()
+    {       
        if (moving != true)
         {
             input.x = Input.GetAxisRaw("Horizontal");
@@ -33,6 +50,7 @@ public class player : MonoBehaviour
         }
     }
 
+
     IEnumerator Move(Vector3 targetPosition)
     {
         moving = true;
@@ -45,5 +63,9 @@ public class player : MonoBehaviour
         transform.position = targetPosition;
         moving = false;
     }
+
+
+
+
 
 }
