@@ -5,12 +5,6 @@ using UnityEngine;
 public class path : MonoBehaviour
 {
     public Transform posicionInicial;
-    SpriteRenderer spriteRenderer;
-
-    private void Awake()
-    {
-        
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {      
@@ -20,16 +14,14 @@ public class path : MonoBehaviour
             Debug.Log("Está dentro el player");
 
             StartCoroutine(Respawn(0.75f));
-
+                        
             IEnumerator Respawn(float duration)
             {
                 
                 yield return new WaitForSeconds(duration);
                 other.gameObject.transform.position = posicionInicial.position;
-            }                          
-
+                
+            }           
         }
-    }    
-
-    
+    }        
 }

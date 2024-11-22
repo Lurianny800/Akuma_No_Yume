@@ -28,7 +28,6 @@ public class enemigo : MonoBehaviour
 
     void Move()
     {
-
         //Starts to move the object towards the first "moveToPoint" you set in inspector
         this.transform.position = Vector3.MoveTowards(this.transform.position, currentPoint, Time.deltaTime * moveSpeed);
 
@@ -49,6 +48,26 @@ public class enemigo : MonoBehaviour
             //sets the destination of the "moveToPoint" destination
             currentPoint = moveToPoints[pointSelection];
         }
-
     }
+
+    public Transform posicionInicial;
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("Está dentro el player");
+
+            StartCoroutine(Respawn(0.75f));
+
+            IEnumerator Respawn(float duration)
+            {
+
+                yield return new WaitForSeconds(duration);
+                other.gameObject.transform.position = posicionInicial.position;
+            }
+        }
+    }
+
 }

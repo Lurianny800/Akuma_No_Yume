@@ -17,12 +17,15 @@ public class player : MonoBehaviour
     {
         currentHealth = maxHealth;
     }
-    void OnCollisionEnter2D(Collision2D collision)
+
+    public void RemoveHealth()
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            currentHealth--;
-        }
+        currentHealth--;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        RemoveHealth();
     }
 
     private void Update()
