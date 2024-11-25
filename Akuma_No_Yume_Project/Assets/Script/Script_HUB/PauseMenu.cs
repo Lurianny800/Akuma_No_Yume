@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pausePanel; // Panel de pausa
+    public GameObject pausePanel; // Panel de pausa general
     public GameObject mapPanel;   // Panel de mapa
-
-    private Animator pauseAnimator; // Referencia al Animator del panel de pausa
     private bool isPaused = false; // Estado de pausa
 
-    void Start()
-    {
-        pauseAnimator = pausePanel.GetComponent<Animator>();
-    }
     void Update()
     {
-        // Tecla "Esc" para pausar o reanudar
+        // Tecla "Esc" para pausar o reanudar el juego
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
@@ -29,7 +23,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    // Método para pausar y reanudar
+    // Método para pausar y reanudar el juego
     public void TogglePause()
     {
         if (isPaused)
@@ -44,29 +38,20 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        Debug.Log("PauseGame");
-        pausePanel.SetActive(true); // Muestra el panel antes de animarlo
-        pauseAnimator.Play("PausePanelSlideIn"); // Reproduce la animación de entrada
-        Debug.Log("PlaySlideIn");
-        Time.timeScale = 0f;
-        isPaused = true;        
+        pausePanel.SetActive(true);
+        Time.timeScale = 0f; // Congela el tiempo del juego
+        isPaused = true;
     }
 
     public void ResumeGame()
     {
-        pauseAnimator.Play("PausePanelSlideOut"); // Reproduce la animación de salida
-        Invoke("HidePausePanel", 1f); // Retrasa el ocultado del panel hasta que termine la animación
-        mapPanel.SetActive(false); // Oculta el mapa si estaba abierto
-        Debug.Log("PlaySlideOut");
-        Time.timeScale = 1f; // Restaura el tiempo normal del juego
+        pausePanel.SetActive(false);
+        mapPanel.SetActive(false); // Asegura que el mapa se oculte al reanudar
+        Time.timeScale = 1f;       // Restaura el tiempo normal del juego
         isPaused = false;
     }
-    void HidePausePanel()
-    {
-        pausePanel.SetActive(false); // Oculta el panel tras la animación de salida
-    }
 
-    // Método para abrir el mapa y pausar
+    // Método para alternar el estado del mapa y pausar el juego
     public void ToggleMap()
     {
         if (mapPanel.activeSelf)
