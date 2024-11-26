@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/HUB_InGame.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Niveles de Lur/LVL_0.unity
+    guid: 967ae9972f3af0447b3c3b3f434c5eb7
+  - enabled: 1
     path: Assets/Scenes/Samuel/Start_lvl.unity
     guid: 3f051a95ef2f53f449e92deda60817a7
   - enabled: 1

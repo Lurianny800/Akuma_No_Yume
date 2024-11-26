@@ -13,6 +13,9 @@ public class HUB_Manager : MonoBehaviour
     private float cooldownCuracion = 5f; // Cooldown de 5 segundos
     private float tiempoUltimaCuracion;
 
+    private bool cercaDeTorre;
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -52,7 +55,13 @@ public class HUB_Manager : MonoBehaviour
     }
     private void IntentarCurar()
     {
-        // Verificar si ha pasado el cooldown
+        // Verificar si está cerca de una torre.
+        if (!cercaDeTorre)
+        {
+            Debug.Log("No estás cerca de una torre para curarte.");
+            return;
+        }
+        //Verificar si ha pasado el CoolDown
         if (Time.time - tiempoUltimaCuracion >= cooldownCuracion)
         {
             bool vidaRecuperada = RecuperarVida();
@@ -64,9 +73,10 @@ public class HUB_Manager : MonoBehaviour
         else
         {
             Debug.Log("Curación en cooldown. Espera un poco más.");
+
+
         }
     }
-
     public bool RecuperarVida()
     {
         if (vidas == 4)
@@ -78,5 +88,9 @@ public class HUB_Manager : MonoBehaviour
         vidasHUB.ActivarVida(vidas);
         vidas += 1;
         return true;
+    }
+    public void SetCercaDeTorre(bool estado) 
+    {
+        cercaDeTorre = estado;
     }
 }
