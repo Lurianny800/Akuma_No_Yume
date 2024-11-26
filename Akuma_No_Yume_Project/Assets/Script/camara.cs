@@ -12,9 +12,11 @@ public class camara : MonoBehaviour
 
     void LateUpdate()
     {
+
         // Verificar si el jugador ha sido asignado
         if (player != null)
         {
+            Debug.Log("La cámara está siguiendo al jugador.");
             // Calcular la posición deseada de la cámara
             Vector3 desiredPosition = player.position + offset;
 
