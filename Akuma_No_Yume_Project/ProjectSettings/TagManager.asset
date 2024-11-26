@@ -12,7 +12,7 @@ TagManager:
   - Suelo
   - Water
   - UI
-  - Suelo
+  - chara
   - 
   - 
   - 
@@ -44,4 +44,7 @@ TagManager:
     locked: 0
   - name: suelo
     uniqueID: 2054429781
+    locked: 0
+  - name: Chara
+    uniqueID: 2237071597
     locked: 0
