@@ -48,7 +48,7 @@ public class HUB_Manager : MonoBehaviour
         if (vidas == 0)
         {
             // Reiniciamos el nivel.
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
 
         vidasHUB.DesactivarVida(vidas);
