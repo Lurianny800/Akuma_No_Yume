@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 572594396217567104}
   - component: {fileID: 4701662173149459550}
   - component: {fileID: 3944622019322177065}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player_Hikari
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751612325595728693}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0.38346684, y: 0.38345024, z: 0.6635809}
   m_ConstrainProportionsScale: 0
@@ -206,7 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364653023558232460}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8270853703259014538}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2588967257302979762}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
