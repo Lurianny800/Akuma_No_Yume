@@ -4,17 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Suelo
+  - Torre
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Suelo
+  - Grid
   - Water
   - UI
-  - chara
-  - 
-  - 
+  - Suelo
+  - Player
+  - Torre
   - 
   - 
   - 
@@ -44,7 +44,4 @@ TagManager:
     locked: 0
   - name: suelo
     uniqueID: 2054429781
-    locked: 0
-  - name: Chara
-    uniqueID: 2237071597
     locked: 0
