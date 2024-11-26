@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -66,5 +67,17 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 0f;       // Pausa el juego
             isPaused = true;
         }
+    }
+    public void LoadOptions() 
+    {
+        // Cargar la escena de Opciones
+        Time.timeScale = 1f; // Asegúrate de que el tiempo esté activo al cambiar de escena
+        SceneManager.LoadScene("Opciones");
+    }
+    public void LoadMainMenu()
+    {
+        // Cargar la escena del Menú Principal
+        Time.timeScale = 1f; // Asegúrate de que el tiempo esté activo al cambiar de escena
+        SceneManager.LoadScene("MenuPrincipal");
     }
 }
