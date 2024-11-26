@@ -5,13 +5,21 @@ using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
-    public float moveSpeed;
+    [Header("Movement")]
+    [Tooltip("Adjust player's movement speed")]
+    public float moveSpeed;    
     private bool moving;
-    public Vector2 input;
+    [HideInInspector]public Vector2 input;
+
+    [Space]
 
     [Header("Health")]
-    [SerializeField] private int maxHealth = 10;
+    [Tooltip("Adjust player's max health")]
+    [SerializeField] private int maxHealth = 5;    
+    [Space]
+    [Tooltip("Shows player's current health")]
     [SerializeField] private int currentHealth;
+    
 
     private void Start()
     {

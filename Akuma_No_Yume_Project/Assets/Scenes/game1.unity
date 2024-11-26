@@ -334,7 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 386574642}
   m_Layer: 0
-  m_Name: PosicionInicial
+  m_Name: InitialPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   input: {x: 0, y: 0}
-  maxHealth: 10
+  maxHealth: 5
   currentHealth: 0
 --- !u!61 &511876713
 BoxCollider2D:
@@ -1024,7 +1024,7 @@ MonoBehaviour:
   currentPoint: {x: -9.5, y: -6.5, z: 0}
   moveSpeed: 2.5
   pointSelection: 0
-  posicionInicial: {fileID: 386574642}
+  initialPosition: {fileID: 386574642}
 --- !u!50 &1211041371
 Rigidbody2D:
   serializedVersion: 4
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   currentPoint: {x: -4.5, y: 0.5, z: 0}
   moveSpeed: 2.5
   pointSelection: 0
-  posicionInicial: {fileID: 386574642}
+  initialPosition: {fileID: 386574642}
 --- !u!212 &1360568723
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1527,7 +1527,7 @@ MonoBehaviour:
   currentPoint: {x: 7.5, y: -4.5, z: 0}
   moveSpeed: 2.5
   pointSelection: 0
-  posicionInicial: {fileID: 386574642}
+  initialPosition: {fileID: 386574642}
 --- !u!212 &1396143114
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9119,7 +9119,7 @@ MonoBehaviour:
   currentPoint: {x: -9.5, y: -2.5, z: 0}
   moveSpeed: 2.5
   pointSelection: 0
-  posicionInicial: {fileID: 386574642}
+  initialPosition: {fileID: 386574642}
 --- !u!212 &1820835188
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12761,7 +12761,7 @@ MonoBehaviour:
   currentPoint: {x: 6.5, y: 3.5, z: 0}
   moveSpeed: 2.5
   pointSelection: 0
-  posicionInicial: {fileID: 386574642}
+  initialPosition: {fileID: 386574642}
 --- !u!212 &1917975676
 SpriteRenderer:
   m_ObjectHideFlags: 0

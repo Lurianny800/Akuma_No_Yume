@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class enemigo : MonoBehaviour
 {
+    [Header("Movement")]
+    [Tooltip("Set your enemy's start posititon")]
     public Vector3 startPosition;
+    [Space]
+    [Tooltip("Add the positions your enemy will move to")]
     public Vector3[] moveToPoints;
-    public Vector3 currentPoint;
-
+    
+    [HideInInspector]public Vector3 currentPoint;
+    [Space]
+    [Tooltip("Adjust your enemy's movement speed")]
     public float moveSpeed;
 
-    public int pointSelection;
+    [HideInInspector]public int pointSelection;
 
     // Start is called before the first frame update
     void Start()
@@ -49,8 +55,9 @@ public class enemigo : MonoBehaviour
             currentPoint = moveToPoints[pointSelection];
         }
     }
-
-    public Transform posicionInicial;
+    [Header("Player respawn")]
+    [Tooltip("Set your player's respawn point")]
+    public Transform initialPosition;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -65,7 +72,7 @@ public class enemigo : MonoBehaviour
             {
 
                 yield return new WaitForSeconds(duration);
-                other.gameObject.transform.position = posicionInicial.position;
+                other.gameObject.transform.position = initialPosition.position;
             }
         }
     }
