@@ -12,16 +12,18 @@ public class path : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Está dentro el player");
+            Debug.Log("You fell :(");
 
-            StartCoroutine(Respawn(0.75f));
-                        
+            StartCoroutine(Respawn(0.5f));
+           
             IEnumerator Respawn(float duration)
             {
                 
+
                 yield return new WaitForSeconds(duration);
-                other.gameObject.transform.position = posicionInicial.position;
                 
+                other.gameObject.transform.position = posicionInicial.position;
+             
             }           
         }
     }        

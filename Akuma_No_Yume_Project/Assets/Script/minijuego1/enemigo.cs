@@ -64,9 +64,9 @@ public class enemigo : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Está dentro el player");
+            Debug.Log("Enemy got you!");
 
-            StartCoroutine(Respawn(0.75f));
+            StartCoroutine(Respawn(0.5f));
 
             IEnumerator Respawn(float duration)
             {

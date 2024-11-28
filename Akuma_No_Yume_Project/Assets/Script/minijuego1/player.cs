@@ -12,6 +12,7 @@ public class player : MonoBehaviour
     [HideInInspector]public Vector2 input;
 
     [Space]
+    public Vidas_HUB vidasHUB; //Llamar al panel
 
     [Header("Health")]
     [Tooltip("Adjust player's max health")]
@@ -29,11 +30,15 @@ public class player : MonoBehaviour
     public void RemoveHealth()
     {
         currentHealth--;
+        vidasHUB.DesactivarVida(currentHealth);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        RemoveHealth();
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Path")
+        {
+            RemoveHealth();
+        }        
     }
 
     private void Update()
