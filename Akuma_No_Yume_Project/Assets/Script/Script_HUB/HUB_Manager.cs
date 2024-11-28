@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class HUB_Manager : MonoBehaviour
 {
     public static HUB_Manager Instance { get; private set; }
+    [Tooltip("Añade el Panel de Vidas.")]
     public Vidas_HUB vidasHUB; //Llamar al panel
+    [Tooltip("Escribe el nombre de la escena que se va a recargar cuando pierda.")]
+    public string sceneName;
     public int PuntosTotales { get; private set; }
 
     private int vidas = 4;
@@ -48,7 +51,7 @@ public class HUB_Manager : MonoBehaviour
         if (vidas == 0)
         {
             // Reiniciamos el nivel.
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(sceneName);
         }
 
         vidasHUB.DesactivarVida(vidas);

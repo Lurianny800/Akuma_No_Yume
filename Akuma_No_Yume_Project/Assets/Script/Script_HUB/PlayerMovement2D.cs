@@ -28,6 +28,7 @@ public class PlayerMovement2D : MonoBehaviour
     public Transform groundCheck3; // Objeto para verificar contacto con el suelo
     [Tooltip("Valor 0 para funcione y valor 0,2 para visualizarlo"), Range(0f,1f)]
     public float groundCheckDistance = 1f; // Distancia del Raycast para detectar el suelo
+    [Tooltip("Añade un Layer llamado 'Suelo' e indicalo aquí")]
     public LayerMask groundLayer; // Capa que representa el suelo
 
     private void Start()
