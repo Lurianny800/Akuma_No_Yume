@@ -11,6 +11,7 @@ public class enemigo : MonoBehaviour
     private Rigidbody2D rb; // Componente Rigidbody2D para controlar el movimiento
     private Animator animator; // Animador del enemigo (si lo usas)
     private bool isPlayerGrounded;
+    public float health = 100f;  // Salud del enemigo
 
     void Start()
     {
@@ -72,5 +73,23 @@ public class enemigo : MonoBehaviour
         {
             animator.SetBool("isWalking", false); // Detener animación de caminar
         }
+    }
+    // Método que se llama cuando el enemigo recibe daño
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+        Debug.Log("Enemy Health: " + health);
+
+        if (health <= 0f)
+        {
+            Die();  // Si la salud llega a 0, el enemigo muere
+        }
+    }
+
+    // Método para manejar la muerte del enemigo
+    void Die()
+    {
+        Debug.Log("Enemy died");
+        Destroy(gameObject);  // Destruir el objeto enemigo
     }
 }

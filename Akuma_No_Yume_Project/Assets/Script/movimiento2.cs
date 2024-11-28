@@ -5,7 +5,9 @@ using UnityEngine;
 public class movimiento2 : MonoBehaviour
 {
     [Header("Movimiento y Dash")]
+    [Range(2f,10f)]
     public float moveSpeed = 5f;         // Velocidad normal de movimiento
+    [Space]
     public float dashSpeed = 15f;        // Velocidad al hacer el dash
     public float dashDuration = 0.2f;    // Duración del dash
     private float dashCooldown = 1f;      // Tiempo entre cada dash
@@ -23,6 +25,10 @@ public class movimiento2 : MonoBehaviour
     private bool isDashing = false;      // ¿El jugador está en medio del dash?
     private bool isGrounded = false;     // ¿El jugador está tocando el suelo?
     private bool canDoubleJump = false;  // ¿El jugador puede hacer un segundo salto?
+    [Header("Ataque")]
+    public float attackDamage = 20f;     // Daño del ataque
+    public Transform attackPoint;        // El punto de ataque (donde se activa el ataque)
+    public float attackRange = 0.5f;     // Rango del ataque (cuánto abarca el área de ataque)
 
     private Vector2 moveDirection;       // Dirección del movimiento
 
@@ -57,6 +63,12 @@ public class movimiento2 : MonoBehaviour
             {
                 DoubleJump();
             }
+
+            // Ataque con la tecla 'A'
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                Attack();
+            }
         }
 
         // Actualizar el temporizador de dash
@@ -84,6 +96,25 @@ public class movimiento2 : MonoBehaviour
         if (!isDashing)
         {
             rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y);  // Mantener la velocidad vertical al caminar
+        }
+    }
+
+    void Attack()
+    {
+        Debug.Log("Attack!");
+
+        // Detectar los enemigos dentro del rango de ataque
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
+
+        // Iterar sobre los enemigos y hacerles daño
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (enemy.CompareTag("Enemy"))
+            {
+                // Llamar al método TakeDamage del enemigo
+                Debug.Log("Hit " + enemy.name);  // Debug para verificar si el enemigo es golpeado
+                enemy.GetComponent<enemigo>().TakeDamage(attackDamage);
+            }
         }
     }
 
@@ -119,6 +150,12 @@ public class movimiento2 : MonoBehaviour
     {
         rb.velocity = new Vector2(rb.velocity.x, doubleJumpForce);  // Aplicar la fuerza de doble salto
         canDoubleJump = false;  // El jugador ya no puede hacer otro salto hasta que toque el suelo
+    }
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null) return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
 
