@@ -399,7 +399,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49411765}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -33309,7 +33309,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 367630031170329099, guid: c101bb674738d5f4eac796e3b6523a03, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.815618
+      value: 2.7681324
       objectReference: {fileID: 0}
     - target: {fileID: 367630031170329099, guid: c101bb674738d5f4eac796e3b6523a03, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34590,7 +34590,11 @@ PrefabInstance:
       objectReference: {fileID: 1393720949}
     - target: {fileID: 5983555832837627850, guid: c937af10114271c42afbd11f4a7b5f1a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -735.00006
+      value: -735.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983555832837627850, guid: c937af10114271c42afbd11f4a7b5f1a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -17.499985
       objectReference: {fileID: 0}
     - target: {fileID: 6000375947791042613, guid: c937af10114271c42afbd11f4a7b5f1a, type: 3}
       propertyPath: m_Pivot.x
@@ -34698,7 +34702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6622129373877635179, guid: c937af10114271c42afbd11f4a7b5f1a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -215
+      value: -214.99998
       objectReference: {fileID: 0}
     - target: {fileID: 7200449175883064128, guid: c937af10114271c42afbd11f4a7b5f1a, type: 3}
       propertyPath: m_Padding.m_Top
@@ -35088,11 +35092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7699755634835331703, guid: af7bc7f553795a747b212f8ed743bd64, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -7.59
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7699755634835331703, guid: af7bc7f553795a747b212f8ed743bd64, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.688
+      value: -0.68
       objectReference: {fileID: 0}
     - target: {fileID: 7699755634835331703, guid: af7bc7f553795a747b212f8ed743bd64, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -10,8 +10,8 @@ public class PlayerMovement2D : MonoBehaviour
     public float moveSpeed = 5f; // Velocidad de movimiento
     [Min(16), Space(2)]
     public float jumpForce = 16f; // Fuerza del salto
-    [Range(0,1), Space(2)]
-    public int maxJumps = 1; // Cantidad máxima de saltos permitidos
+    [HideInInspector]
+    public int maxJumps = 0; // Cantidad máxima de saltos permitidos
 
     private Rigidbody2D rb;
     private int jumpsRemaining; // Saltos restantes
@@ -20,13 +20,13 @@ public class PlayerMovement2D : MonoBehaviour
     private bool isGrounded3;
 
     [Header("Chequeo de suelo")]
-    [Tooltip("Agrega un GameObject siendo hijo del Player")]
+    [HideInInspector]
     public Transform groundCheck; // Objeto para verificar contacto con el suelo
-    [Tooltip("Agrega un GameObject siendo hijo del Player")]
+    [HideInInspector]
     public Transform groundCheck2; // Objeto para verificar contacto con el suelo
-    [Tooltip("Agrega un GameObject siendo hijo del Player")]
+    [HideInInspector]
     public Transform groundCheck3; // Objeto para verificar contacto con el suelo
-    [Tooltip("Valor 0 para funcione y valor 0,2 para visualizarlo"), Range(0f,1f)]
+    [HideInInspector]
     public float groundCheckDistance = 1f; // Distancia del Raycast para detectar el suelo
     [Tooltip("Añade un Layer llamado 'Suelo' e indicalo aquí")]
     public LayerMask groundLayer; // Capa que representa el suelo
