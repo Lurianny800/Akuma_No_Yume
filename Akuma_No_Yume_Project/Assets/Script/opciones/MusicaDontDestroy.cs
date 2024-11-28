@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class AudioManager2 : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    private static AudioManager2 instance;
+    private static AudioManager instance;
 
     private void Awake()
     {
@@ -23,5 +23,4 @@ public class AudioManager2 : MonoBehaviour
         AudioListener.volume = volume; // Ajusta el volumen global
     }
 }
-
 
