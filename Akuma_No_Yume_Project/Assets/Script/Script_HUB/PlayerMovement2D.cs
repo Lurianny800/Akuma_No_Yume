@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class PlayerMovement2D : MonoBehaviour
 {
     [Header("Movimiento")]
+    [Min(5),Space(8)]
     public float moveSpeed = 5f; // Velocidad de movimiento
-    public float jumpForce = 10f; // Fuerza del salto
+    [Min(16), Space(2)]
+    public float jumpForce = 16f; // Fuerza del salto
+    [Range(0,1), Space(2)]
     public int maxJumps = 1; // Cantidad máxima de saltos permitidos
 
     private Rigidbody2D rb;
@@ -16,9 +20,13 @@ public class PlayerMovement2D : MonoBehaviour
     private bool isGrounded3;
 
     [Header("Chequeo de suelo")]
-    public Transform groundCheck; // Objeto para verificar contacto con el suelo   
+    [Tooltip("Agrega un GameObject siendo hijo del Player")]
+    public Transform groundCheck; // Objeto para verificar contacto con el suelo
+    [Tooltip("Agrega un GameObject siendo hijo del Player")]
     public Transform groundCheck2; // Objeto para verificar contacto con el suelo
+    [Tooltip("Agrega un GameObject siendo hijo del Player")]
     public Transform groundCheck3; // Objeto para verificar contacto con el suelo
+    [Tooltip("Valor 0 para funcione y valor 0,2 para visualizarlo"), Range(0f,1f)]
     public float groundCheckDistance = 1f; // Distancia del Raycast para detectar el suelo
     public LayerMask groundLayer; // Capa que representa el suelo
 
@@ -41,7 +49,7 @@ public class PlayerMovement2D : MonoBehaviour
 
         // Si el personaje está tocando el suelo, restablece los saltos
         if ((isGrounded) || (isGrounded2) || (isGrounded3))
-        {
+        {            
             jumpsRemaining = maxJumps;
         }
 
@@ -49,7 +57,7 @@ public class PlayerMovement2D : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && jumpsRemaining >= 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);           
-            jumpsRemaining--;
+            jumpsRemaining--; 
             
         }
     }

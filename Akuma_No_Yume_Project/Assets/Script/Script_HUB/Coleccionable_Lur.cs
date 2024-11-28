@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coleccionable_Lur : MonoBehaviour
 {
-    public int points = 1; // Puntos que este coleccionable otorgará
+    [HideInInspector] public int points = 1; // Puntos que este coleccionable otorgará
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

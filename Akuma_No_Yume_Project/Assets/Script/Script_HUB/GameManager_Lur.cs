@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager_Lur : MonoBehaviour
 {
     public static GameManager_Lur instance;
-    public int score = 0;
+    [HideInInspector]public int score = 0;
 
     private void Awake()
     {

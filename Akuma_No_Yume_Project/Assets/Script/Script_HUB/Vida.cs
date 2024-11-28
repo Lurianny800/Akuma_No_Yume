@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Vida : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+   /* private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -15,5 +15,5 @@ public class Vida : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-    }
+    }*/
 }
