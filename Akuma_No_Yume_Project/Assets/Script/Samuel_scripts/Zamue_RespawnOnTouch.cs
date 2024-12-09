@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RespawnOnTouch : MonoBehaviour
+public class Zamue_RespawnOnTouch : MonoBehaviour
 {
     // Referencia al objeto de inicio (punto de respawn)
     public Transform respawnPoint;

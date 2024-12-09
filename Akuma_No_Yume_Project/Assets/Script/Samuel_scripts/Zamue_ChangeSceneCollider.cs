@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChangeSceneOnCollision : MonoBehaviour
+public class Zamue_ChangeSceneCollider : MonoBehaviour
 {
     public string sceneName; // Nombre de la escena a la que cambiar
 

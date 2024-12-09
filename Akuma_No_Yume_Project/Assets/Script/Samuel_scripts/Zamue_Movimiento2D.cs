@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 
-public class Movimiento2D : MonoBehaviour
+public class Zamue_Movimiento2D : MonoBehaviour
 {
     public float velocidad = 5f; // Velocidad de movimiento
     public float fuerzaSalto = 7f; // Fuerza del salto
@@ -59,7 +58,7 @@ public class Movimiento2D : MonoBehaviour
         }
 
         // Deslizamiento
-        if (Input.GetKeyDown(KeyCode.LeftShift)  && !deslizandose) // Se activa con la tecla E
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !deslizandose) // Se activa con la tecla E
         {
             if (corutinaEsperaDeslizar == null) // Solo se puede deslizar si no hay una corutina de espera activa
             {

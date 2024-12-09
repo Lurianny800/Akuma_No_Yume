@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; // Necesario para cargar escenas
-
-public class CambiarEscena : MonoBehaviour
+using UnityEngine.SceneManagement;
+public class Zamue_Cambiar_escena : MonoBehaviour
 {
     public string nombreEscena; // El nombre de la escena que quieres cargar
 
@@ -18,4 +17,3 @@ public class CambiarEscena : MonoBehaviour
         }
     }
 }
-
