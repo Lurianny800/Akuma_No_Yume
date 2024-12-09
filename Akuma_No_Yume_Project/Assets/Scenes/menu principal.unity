@@ -1423,11 +1423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2711854563d4f41a07255492ea6ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &551014809 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2778470522343692647, guid: 8877b4eafaa6bf143a50097c6181ee39, type: 3}
-  m_PrefabInstance: {fileID: 551014807}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &554303023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,9 +2719,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 551014809}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
+      - m_Target: {fileID: 551014808}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

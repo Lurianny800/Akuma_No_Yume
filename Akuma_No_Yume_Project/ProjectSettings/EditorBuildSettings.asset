@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/menu principal.unity
+    guid: d406dcc59ba622c459ec2ab97429b2c8
+  - enabled: 1
+    path: Assets/Scenes/Opciones.unity
+    guid: e0c5b1a94d08a2f468b017343d2e76fd
+  - enabled: 1
+    path: Assets/Scenes/Lur_Scenes/Niveles de Luri/LVL_0.unity
+    guid: a40ee44147cf1ea4080f903a909f275d
+  - enabled: 1
+    path: Assets/Scenes/Marta/game1.unity
+    guid: f0e2669006c450042a54ceeb83a72d26
+  - enabled: 1
+    path: Assets/Scenes/Samuel/LVL2.unity
+    guid: 3914dfcc702a7b24a9c5dfa742be0bb3
+  - enabled: 1
+    path: Assets/Scenes/LVL_3_M.unity
+    guid: caf14c105063ebc488f91aa0ed4eb39e
   m_configObjects: {}

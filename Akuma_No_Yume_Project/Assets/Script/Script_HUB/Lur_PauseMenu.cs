@@ -78,6 +78,6 @@ public class Lur_PauseMenu : MonoBehaviour
     {
         // Cargar la escena del Menú Principal
         Time.timeScale = 1f; // Asegúrate de que el tiempo esté activo al cambiar de escena
-        SceneManager.LoadScene("MenuPrincipal");
+        SceneManager.LoadScene("menu principal");
     }
 }
