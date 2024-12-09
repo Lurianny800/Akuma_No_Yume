@@ -1423,6 +1423,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2711854563d4f41a07255492ea6ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &551014809 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2778470522343692647, guid: 8877b4eafaa6bf143a50097c6181ee39, type: 3}
+  m_PrefabInstance: {fileID: 551014807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &554303023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,7 +2653,6 @@ GameObject:
   - component: {fileID: 857063454}
   - component: {fileID: 857063453}
   - component: {fileID: 857063452}
-  - component: {fileID: 857063451}
   m_Layer: 5
   m_Name: Nueva partida
   m_TagString: Untagged
@@ -2676,18 +2680,6 @@ RectTransform:
   m_AnchoredPosition: {x: -569, y: -34.68}
   m_SizeDelta: {x: 186, y: 71}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &857063451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857063449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c937e5abe2a769e4fa8b59f1c0157f31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &857063452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2732,16 +2724,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 857063451}
-        m_TargetAssemblyTypeName: CambiarEscena, Assembly-CSharp
-        m_MethodName: CambiarAEscena
+      - m_Target: {fileID: 551014809}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LVL_3_M
+          m_StringArgument: LVL_0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &857063453

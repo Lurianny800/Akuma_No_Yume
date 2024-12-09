@@ -8,7 +8,7 @@ public class HealingTower : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            HUB_Manager.Instance.SetCercaDeTorre(true);
+            Lur_HUBManager.Instance.SetCercaDeTorre(true);
             Debug.Log("Jugador dentro del área de curación.");
         }
     }
@@ -17,7 +17,7 @@ public class HealingTower : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            HUB_Manager.Instance.SetCercaDeTorre(false);
+            Lur_HUBManager.Instance.SetCercaDeTorre(false);
             Debug.Log("Jugador salió del área de curación.");
         }
     }

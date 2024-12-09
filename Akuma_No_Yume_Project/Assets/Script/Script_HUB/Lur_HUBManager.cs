@@ -51,11 +51,8 @@ public class Lur_HUBManager : MonoBehaviour
         if (vidas == 0)
         {
             // Reiniciamos el nivel.
-<<<<<<< HEAD:Akuma_No_Yume_Project/Assets/Script/Script_HUB/HUB_Manager.cs
-            SceneManager.LoadScene(2);
-=======
+
             SceneManager.LoadScene(sceneName);
->>>>>>> HUB-y-Gameplay:Akuma_No_Yume_Project/Assets/Script/Script_HUB/Lur_HUBManager.cs
         }
 
         vidasHUB.DesactivarVida(vidas);
@@ -96,11 +93,8 @@ public class Lur_HUBManager : MonoBehaviour
         vidas += 1;
         return true;
     }
-<<<<<<< HEAD:Akuma_No_Yume_Project/Assets/Script/Script_HUB/HUB_Manager.cs
-    public void SetCercaDeTorre(bool estado) 
-=======
+
     public void SetCercaDeTorre(bool estado)
->>>>>>> HUB-y-Gameplay:Akuma_No_Yume_Project/Assets/Script/Script_HUB/Lur_HUBManager.cs
     {
         cercaDeTorre = estado;
     }
