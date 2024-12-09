@@ -12,7 +12,7 @@ public class player : MonoBehaviour
     [HideInInspector]public Vector2 input;
 
     [Space]
-    public Vidas_HUB vidasHUB; //Llamar al panel
+    public healthHUD_Marta vidasHUB; //Llamar al panel
 
     [Header("Health")]
     [Tooltip("Adjust player's max health")]
@@ -39,6 +39,7 @@ public class player : MonoBehaviour
         {
             RemoveHealth();
         }        
+        
     }
 
     private void Update()

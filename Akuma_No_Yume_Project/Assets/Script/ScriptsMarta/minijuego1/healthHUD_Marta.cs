@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Vidas_HUB : MonoBehaviour
+public class healthHUD_Marta : MonoBehaviour
 {
     public TextMeshProUGUI puntos;
     public GameObject[] vidas;
