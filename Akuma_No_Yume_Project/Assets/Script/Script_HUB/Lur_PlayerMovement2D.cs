@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class PlayerMovement2D : MonoBehaviour
+
+
+public class Lur_PlayerMovement2D : MonoBehaviour
 {
     [Header("Movimiento")]
-    [Min(5),Space(8)]
+    [Min(5), Space(8)]
     public float moveSpeed = 5f; // Velocidad de movimiento
     [Min(16), Space(2)]
     public float jumpForce = 16f; // Fuerza del salto
@@ -50,16 +52,16 @@ public class PlayerMovement2D : MonoBehaviour
 
         // Si el personaje está tocando el suelo, restablece los saltos
         if ((isGrounded) || (isGrounded2) || (isGrounded3))
-        {            
+        {
             jumpsRemaining = maxJumps;
         }
 
         // Salto solo si hay saltos disponibles
         if (Input.GetKeyDown(KeyCode.Space) && jumpsRemaining >= 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);           
-            jumpsRemaining--; 
-            
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            jumpsRemaining--;
+
         }
     }
 
@@ -75,4 +77,3 @@ public class PlayerMovement2D : MonoBehaviour
         }
     }
 }
-

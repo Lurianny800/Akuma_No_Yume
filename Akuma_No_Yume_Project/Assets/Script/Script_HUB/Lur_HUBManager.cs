@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HUB_Manager : MonoBehaviour
+public class Lur_HUBManager : MonoBehaviour
 {
-    public static HUB_Manager Instance { get; private set; }
+    public static Lur_HUBManager Instance { get; private set; }
     [Tooltip("Añade el Panel de Vidas.")]
-    public Vidas_HUB vidasHUB; //Llamar al panel
+    public Lur_VidasHUB vidasHUB; //Llamar al panel
     [Tooltip("Escribe el nombre de la escena que se va a recargar cuando pierda.")]
     public string sceneName;
     public int PuntosTotales { get; private set; }
@@ -92,7 +92,7 @@ public class HUB_Manager : MonoBehaviour
         vidas += 1;
         return true;
     }
-    public void SetCercaDeTorre(bool estado) 
+    public void SetCercaDeTorre(bool estado)
     {
         cercaDeTorre = estado;
     }

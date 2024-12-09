@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6899287211367077184}
   - component: {fileID: 572594396217567104}
   - component: {fileID: 4701662173149459550}
-  - component: {fileID: 3944622019322177065}
   - component: {fileID: 7247641701267827855}
   m_Layer: 7
   m_Name: Player_Hikari
@@ -176,28 +175,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751612325595728693}
   m_CullTransparentMesh: 1
---- !u!114 &3944622019322177065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751612325595728693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60774b1db24a89040b70c4305b1416ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 16
-  maxJumps: 0
-  groundCheck: {fileID: 2588967257302979762}
-  groundCheck2: {fileID: 8364653023558232460}
-  groundCheck3: {fileID: 8270853703259014538}
-  groundCheckDistance: 0
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &7247641701267827855
 MonoBehaviour:
   m_ObjectHideFlags: 0
