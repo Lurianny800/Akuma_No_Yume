@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu_Miguel : MonoBehaviour
 {
     public GameObject pausePanel; // Panel de pausa general
     public GameObject mapPanel;   // Panel de mapa
@@ -68,7 +68,7 @@ public class PauseMenu : MonoBehaviour
             isPaused = true;
         }
     }
-    public void LoadOptions() 
+    public void LoadOptions()
     {
         // Cargar la escena de Opciones
         Time.timeScale = 1f; // Asegúrate de que el tiempo esté activo al cambiar de escena
