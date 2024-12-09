@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 277692106}
   - component: {fileID: 277692108}
   - component: {fileID: 277692107}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33041,6 +33041,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 532778582}
   mapPanel: {fileID: 526364899}
+--- !u!4 &1021112388 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8364653023558232460, guid: af7bc7f553795a747b212f8ed743bd64, type: 3}
+  m_PrefabInstance: {fileID: 8166935352863743242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1052795838
 GameObject:
   m_ObjectHideFlags: 0
@@ -33456,6 +33461,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &1585796657 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2588967257302979762, guid: af7bc7f553795a747b212f8ed743bd64, type: 3}
+  m_PrefabInstance: {fileID: 8166935352863743242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1598802945
 GameObject:
   m_ObjectHideFlags: 0
@@ -34339,6 +34349,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!4 &1925986607 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8270853703259014538, guid: af7bc7f553795a747b212f8ed743bd64, type: 3}
+  m_PrefabInstance: {fileID: 8166935352863743242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1928027926
 GameObject:
   m_ObjectHideFlags: 0
@@ -35568,7 +35583,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3944622019322177065, guid: af7bc7f553795a747b212f8ed743bd64, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -35596,13 +35612,13 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 16
   maxJumps: 0
-  groundCheck: {fileID: 0}
-  groundCheck2: {fileID: 0}
-  groundCheck3: {fileID: 0}
-  groundCheckDistance: 1
+  groundCheck: {fileID: 1021112388}
+  groundCheck2: {fileID: 1585796657}
+  groundCheck3: {fileID: 1925986607}
+  groundCheckDistance: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
 --- !u!224 &8856837948969803662
 RectTransform:
   m_ObjectHideFlags: 0

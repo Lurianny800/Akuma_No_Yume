@@ -22,14 +22,10 @@ public class Lur_PlayerMovement2D : MonoBehaviour
     private bool isGrounded3;
 
     [Header("Chequeo de suelo")]
-    [HideInInspector]
     public Transform groundCheck; // Objeto para verificar contacto con el suelo
-    [HideInInspector]
     public Transform groundCheck2; // Objeto para verificar contacto con el suelo
-    [HideInInspector]
     public Transform groundCheck3; // Objeto para verificar contacto con el suelo
-    [HideInInspector]
-    public float groundCheckDistance = 1f; // Distancia del Raycast para detectar el suelo
+    public float groundCheckDistance = 0f; // Distancia del Raycast para detectar el suelo
     [Tooltip("Añade un Layer llamado 'Suelo' e indicalo aquí")]
     public LayerMask groundLayer; // Capa que representa el suelo
 
