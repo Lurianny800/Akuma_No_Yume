@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HUB_Manager : MonoBehaviour
+public class Lur_HUBManager : MonoBehaviour
 {
-    public static HUB_Manager Instance { get; private set; }
-    public Vidas_HUB vidasHUB; //Llamar al panel
+    public static Lur_HUBManager Instance { get; private set; }
+    [Tooltip("Añade el Panel de Vidas.")]
+    public Lur_VidasHUB vidasHUB; //Llamar al panel
+    [Tooltip("Escribe el nombre de la escena que se va a recargar cuando pierda.")]
+    public string sceneName;
     public int PuntosTotales { get; private set; }
 
     private int vidas = 4;
@@ -48,7 +51,11 @@ public class HUB_Manager : MonoBehaviour
         if (vidas == 0)
         {
             // Reiniciamos el nivel.
+<<<<<<< HEAD:Akuma_No_Yume_Project/Assets/Script/Script_HUB/HUB_Manager.cs
             SceneManager.LoadScene(2);
+=======
+            SceneManager.LoadScene(sceneName);
+>>>>>>> HUB-y-Gameplay:Akuma_No_Yume_Project/Assets/Script/Script_HUB/Lur_HUBManager.cs
         }
 
         vidasHUB.DesactivarVida(vidas);
@@ -89,7 +96,11 @@ public class HUB_Manager : MonoBehaviour
         vidas += 1;
         return true;
     }
+<<<<<<< HEAD:Akuma_No_Yume_Project/Assets/Script/Script_HUB/HUB_Manager.cs
     public void SetCercaDeTorre(bool estado) 
+=======
+    public void SetCercaDeTorre(bool estado)
+>>>>>>> HUB-y-Gameplay:Akuma_No_Yume_Project/Assets/Script/Script_HUB/Lur_HUBManager.cs
     {
         cercaDeTorre = estado;
     }

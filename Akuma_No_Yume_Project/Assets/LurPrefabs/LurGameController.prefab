@@ -9,7 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9182878198100000336}
+<<<<<<< HEAD
   - component: {fileID: 8221016343382179804}
+=======
+>>>>>>> HUB-y-Gameplay
   m_Layer: 0
   m_Name: LurGameController
   m_TagString: Untagged
@@ -32,6 +35,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &8221016343382179804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,3 +50,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 0}
   mapPanel: {fileID: 0}
+=======
+>>>>>>> HUB-y-Gameplay

@@ -13,7 +13,11 @@ GameObject:
   - component: {fileID: 6899287211367077184}
   - component: {fileID: 572594396217567104}
   - component: {fileID: 4701662173149459550}
+<<<<<<< HEAD
   - component: {fileID: 3944622019322177065}
+=======
+  - component: {fileID: 7247641701267827855}
+>>>>>>> HUB-y-Gameplay
   m_Layer: 7
   m_Name: Player_Hikari
   m_TagString: Player
@@ -33,8 +37,13 @@ RectTransform:
   m_LocalScale: {x: 0.38346684, y: 0.38345024, z: 0.6635809}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< HEAD
   - {fileID: 2588967257302979762}
   - {fileID: 8364653023558232460}
+=======
+  - {fileID: 8364653023558232460}
+  - {fileID: 2588967257302979762}
+>>>>>>> HUB-y-Gameplay
   - {fileID: 8270853703259014538}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -127,7 +136,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< HEAD
   m_Offset: {x: -0.121439755, y: -0.7571287}
+=======
+  m_Offset: {x: -0.15582067, y: -0.7571287}
+>>>>>>> HUB-y-Gameplay
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -138,7 +151,11 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 2.3397431, y: 4.965911}
+=======
+  m_Size: {x: 1.8584062, y: 4.965911}
+>>>>>>> HUB-y-Gameplay
   m_EdgeRadius: 0
 --- !u!50 &572594396217567104
 Rigidbody2D:
@@ -175,7 +192,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751612325595728693}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!114 &3944622019322177065
+=======
+--- !u!114 &7247641701267827855
+>>>>>>> HUB-y-Gameplay
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,6 +205,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1751612325595728693}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 60774b1db24a89040b70c4305b1416ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -197,6 +219,13 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+=======
+  m_Script: {fileID: 11500000, guid: 9d5f78244c7376045a0799ae2ae37ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
+  damage: 1
+>>>>>>> HUB-y-Gameplay
 --- !u!1 &4252259082823851058
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +282,11 @@ Transform:
   m_GameObject: {fileID: 5635216787047623999}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -1.284, y: -3.266, z: 0.842673}
+=======
+  m_LocalPosition: {x: -1.8, y: -3.266, z: 0.842673}
+>>>>>>> HUB-y-Gameplay
   m_LocalScale: {x: 2.6077874, y: 2.6079004, z: 1.5069753}
   m_ConstrainProportionsScale: 0
   m_Children: []

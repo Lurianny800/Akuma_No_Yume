@@ -8,7 +8,7 @@ public class Enemy_Lur : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            HUB_Manager.Instance.PerderVida();
+            Lur_HUBManager.Instance.PerderVida();
         }
     }
 }

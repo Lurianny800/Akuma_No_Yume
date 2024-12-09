@@ -4,18 +4,27 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Enemy
   - MortalZone
+=======
+  - Torre
+  - Enemy
+>>>>>>> HUB-y-Gameplay
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
+<<<<<<< HEAD
   - Botones
+=======
+  - Grid
+>>>>>>> HUB-y-Gameplay
   - Water
   - UI
   - Suelo
-  - 
-  - 
+  - Player
+  - Torre
   - 
   - 
   - 
@@ -42,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: suelo
+    uniqueID: 2054429781
     locked: 0
