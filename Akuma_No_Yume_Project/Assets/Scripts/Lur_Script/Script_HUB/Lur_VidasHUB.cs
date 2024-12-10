@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Lur_VidasHUB : MonoBehaviour
 {
-    public TextMeshProUGUI puntos;
+    [HideInInspector]public TextMeshProUGUI puntos;
     public GameObject[] vidas;
 
     void Update()
