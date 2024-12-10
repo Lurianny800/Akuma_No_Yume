@@ -1,34 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BrilloLogica : MonoBehaviour
 {
-
     public Slider slider;
     public float sliderValue;
     public Image imageBrightness;
 
-    // Start is called before the first frame update
     void Start()
     {
+        // Cargar el valor del brillo guardado en PlayerPrefs
         slider.value = PlayerPrefs.GetFloat("brightness", 0.5f);
 
-        imageBrightness.color = new Color(imageBrightness.color.r, imageBrightness.color.g, imageBrightness.color.b, slider.value);
+        // Aplicar el brillo inicial al panel
+        UpdateBrightness(slider.value);
+
+        // Asegurarse de que el slider llame al método `ChangeSlider` cuando se modifique
+        slider.onValueChanged.AddListener(ChangeSlider);
     }
 
     public void ChangeSlider(float value)
     {
         sliderValue = value;
-        PlayerPrefs.SetFloat("brightness", sliderValue);
-        imageBrightness.color = new Color(imageBrightness.color.r, imageBrightness.color.g, imageBrightness.color.b, slider.value);
 
+        // Guardar el valor del slider en PlayerPrefs
+        PlayerPrefs.SetFloat("brightness", sliderValue);
+
+        // Actualizar el brillo del panel
+        UpdateBrightness(sliderValue);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void UpdateBrightness(float value)
     {
-
+        if (imageBrightness != null)
+        {
+            imageBrightness.color = new Color(imageBrightness.color.r, imageBrightness.color.g, imageBrightness.color.b, value);
+        }
     }
 }
