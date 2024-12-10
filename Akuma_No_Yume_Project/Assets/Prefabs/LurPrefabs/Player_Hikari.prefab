@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8669877935863684481}
   - component: {fileID: 5660393928532399830}
   - component: {fileID: 4798279722647682810}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Player_Hikari
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -205,13 +205,13 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 16
   maxJumps: 0
-  groundCheck: {fileID: 0}
-  groundCheck2: {fileID: 0}
-  groundCheck3: {fileID: 0}
-  groundCheckDistance: 1
+  groundCheck: {fileID: 4477516301722833994}
+  groundCheck2: {fileID: 8455737255898766686}
+  groundCheck3: {fileID: 3413087092006423352}
+  groundCheckDistance: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!1 &7016857889298947278
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4477516301722833994}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GroundCheck2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3413087092006423352}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GroundCheck3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8455737255898766686}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
