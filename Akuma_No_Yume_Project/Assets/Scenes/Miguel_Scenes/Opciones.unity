@@ -395,26 +395,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2711854563d4f41a07255492ea6ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &869229936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 869229938}
+  - component: {fileID: 869229937}
+  m_Layer: 0
+  m_Name: PB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &869229937
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869229936}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.19215687}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &869229938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869229936}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.2769, y: 12.965, z: 0}
+  m_LocalScale: {x: 18.00484, y: 10.194859, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1588496700 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3081038039171028057, guid: acc7affc2f227ef44b52c4c323a608db, type: 3}
   m_PrefabInstance: {fileID: 3069256489633135541}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3069256489633135542}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc523e66d5fef2140a7a0e613b5c7669, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1588496701 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8750782239427247145, guid: acc7affc2f227ef44b52c4c323a608db, type: 3}
-  m_PrefabInstance: {fileID: 3069256489633135541}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59166f67c3a1e89459053701f21ee3b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5858676532459036
@@ -763,19 +836,7 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1588496701}
-        m_TargetAssemblyTypeName: BrilloLogica, Assembly-CSharp
-        m_MethodName: ChangeSlider
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &260389458557492158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2464,7 +2525,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6799285024964804882}
   - component: {fileID: 257128919440118520}
-  - component: {fileID: 6799285024964804883}
   m_Layer: 5
   m_Name: SliderBrillo
   m_TagString: Untagged
@@ -3545,11 +3605,32 @@ PrefabInstance:
       propertyPath: imageBrightness
       value: 
       objectReference: {fileID: 633052545631983476}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8750782239427247145, guid: acc7affc2f227ef44b52c4c323a608db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2696817732394527139, guid: acc7affc2f227ef44b52c4c323a608db, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3069256489633135543}
   m_SourcePrefab: {fileID: 100100000, guid: acc7affc2f227ef44b52c4c323a608db, type: 3}
+--- !u!1 &3069256489633135542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2696817732394527139, guid: acc7affc2f227ef44b52c4c323a608db, type: 3}
+  m_PrefabInstance: {fileID: 3069256489633135541}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3069256489633135543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069256489633135542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896a57cafda256e45b336d59d90a67ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &3069597225041701077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8468,18 +8549,6 @@ RectTransform:
   m_AnchoredPosition: {x: 214.97, y: -140.86002}
   m_SizeDelta: {x: 201.9, y: 20.57}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6799285024964804883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956892753736672378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f7612be84e36247802896a316b7922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6868406359423026704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10826,3 +10895,4 @@ SceneRoots:
   - {fileID: 3069256489633135541}
   - {fileID: 3974301973687530650}
   - {fileID: 4802449046586394497}
+  - {fileID: 869229938}
