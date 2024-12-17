@@ -9,6 +9,10 @@ public class Lur_PauseMenu : MonoBehaviour
     public GameObject mapPanel;   // Panel de mapa
     private bool isPaused = false; // Estado de pausa
 
+    void Start()
+    {
+        isPaused = false;
+    }
     void Update()
     {
         // Tecla "Esc" para pausar o reanudar el juego
@@ -60,6 +64,7 @@ public class Lur_PauseMenu : MonoBehaviour
             mapPanel.SetActive(false); // Oculta el mapa
             Time.timeScale = 1f;       // Reanuda el juego
             isPaused = false;
+            
         }
         else
         {
@@ -72,7 +77,7 @@ public class Lur_PauseMenu : MonoBehaviour
     {
         // Cargar la escena de Opciones
         Time.timeScale = 1f; // Asegúrate de que el tiempo esté activo al cambiar de escena
-        SceneManager.LoadScene("Opciones");
+        SceneManager.LoadScene("Opciones");      
     }
     public void LoadMainMenu()
     {
