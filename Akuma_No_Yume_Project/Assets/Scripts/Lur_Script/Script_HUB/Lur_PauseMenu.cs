@@ -7,18 +7,22 @@ public class Lur_PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel; // Panel de pausa general
     public GameObject mapPanel;   // Panel de mapa
+    private Animator pauseAnimator; // Animator para controlar la animación
+    private bool isAnimating = false; // Evita conflictos durante la animación
     private bool isPaused = false; // Estado de pausa
 
     void Start()
     {
         isPaused = false;
+        pauseAnimator = pausePanel.GetComponent<Animator>(); // Obtener el Animator del panel de pausa
+        pausePanel.SetActive(false); // Asegurarse de que el panel inicie inactivo
     }
     void Update()
     {
         // Tecla "Esc" para pausar o reanudar el juego
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            TogglePause();
+            TogglePause();            
         }
 
         // Tecla "M" para abrir o cerrar el mapa
@@ -43,17 +47,37 @@ public class Lur_PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        
         pausePanel.SetActive(true);
-        Time.timeScale = 0f; // Congela el tiempo del juego
-        isPaused = true;
+        isAnimating = true; // Bloquea la interacción hasta que termine la animación
+        pauseAnimator.SetBool("isPaused", true); // Activar animación de entrada
+        StartCoroutine(WaitForAnimationToPause());
     }
 
     public void ResumeGame()
     {
-        pausePanel.SetActive(false);
+        isAnimating = true; // Bloquea la interacción hasta que termine la animación
+        pauseAnimator.SetBool("isPaused", false); // Activar animación de salida
+        StartCoroutine(WaitForAnimationToResume());
         mapPanel.SetActive(false); // Asegura que el mapa se oculte al reanudar
-        Time.timeScale = 1f;       // Restaura el tiempo normal del juego
+    }
+    private System.Collections.IEnumerator WaitForAnimationToPause()
+    {
+        // Espera el tiempo de la animación
+        yield return new WaitForSecondsRealtime(1f); // Ajusta según la duración de tu animación
+        Time.timeScale = 0f; // Congela el tiempo del juego
+        isPaused = true;
+        isAnimating = false;
+    }
+
+    private System.Collections.IEnumerator WaitForAnimationToResume()
+    {
+        // Espera el tiempo de la animación
+        yield return new WaitForSecondsRealtime(1f); // Ajusta según la duración de tu animación
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f; // Reanuda el tiempo del juego
         isPaused = false;
+        isAnimating = false;
     }
 
     // Método para alternar el estado del mapa y pausar el juego
