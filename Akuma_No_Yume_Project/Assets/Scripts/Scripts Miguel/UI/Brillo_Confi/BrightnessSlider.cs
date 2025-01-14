@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BrightnessSliderSync : MonoBehaviour
+public class BrightnessSlider : MonoBehaviour
 {
     private Slider slider;
 

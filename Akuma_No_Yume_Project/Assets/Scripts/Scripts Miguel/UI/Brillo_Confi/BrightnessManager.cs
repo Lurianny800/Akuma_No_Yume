@@ -3,38 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public static BrightnessManager Instance; // Singleton para acceso global
-
-private const string BrightnessKey = "Brightness";
-private float brightness = 1.0f; // Valor por defecto
-
-void Awake()
+public class BrightnessSliderSync : MonoBehaviour
 {
-    // Configurar el Singleton
-    if (Instance == null)
+    private Slider slider;
+
+    void Start()
     {
-        Instance = this;
-        DontDestroyOnLoad(gameObject); // Mantener este objeto entre escenas
-    }
-    else
-    {
-        Destroy(gameObject); // Evitar duplicados
-        return;
+        slider = GetComponent<Slider>();
+
+        if (BrightnessController.Instance != null)
+        {
+            // Sincronizar el Slider con el valor inicial del brillo
+            slider.value = BrightnessController.Instance.GetBrightness();
+
+            // Conectar el evento para que actualice el brillo en tiempo real
+            slider.onValueChanged.AddListener(OnSliderValueChanged);
+        }
     }
 
-    // Cargar el valor del brillo guardado
-    brightness = PlayerPrefs.GetFloat(BrightnessKey, 1.0f);
+    void OnSliderValueChanged(float value)
+    {
+        if (BrightnessController.Instance != null)
+        {
+            // Actualizar el valor de brillo en el controlador
+            BrightnessController.Instance.SetBrightness(value);
+
+            // Aplicar el brillo en tiempo real
+            BrightnessApplier applier = FindObjectOfType<BrightnessApplier>();
+            if (applier != null)
+            {
+                applier.ApplyBrightness(value);
+            }
+        }
+    }
+    void OnDestroy()
+    {
+        if (slider != null)
+        {
+            slider.onValueChanged.RemoveListener(OnSliderValueChanged);
+        }
+    }
+
+
 }
 
-public void SetBrightness(float value)
-{
-    brightness = value;
-    PlayerPrefs.SetFloat(BrightnessKey, brightness); // Guardar el valor
-}
-
-public float GetBrightness()
-{
-    return brightness;
-}
 

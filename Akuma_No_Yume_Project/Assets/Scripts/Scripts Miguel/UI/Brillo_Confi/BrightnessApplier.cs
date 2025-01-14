@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class BrightnessApplier : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class BrightnessApplier : MonoBehaviour
     {
         // Obtener el valor inicial desde el controlador global
         if (BrightnessController.Instance != null)
-        {
+        {            
             brightness = BrightnessController.Instance.GetBrightness();
         }
 
