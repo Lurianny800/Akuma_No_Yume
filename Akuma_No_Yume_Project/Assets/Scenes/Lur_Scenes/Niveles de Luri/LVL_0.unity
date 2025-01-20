@@ -33532,7 +33532,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433480991}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -35543,7 +35543,7 @@ GameObject:
   - component: {fileID: 3840366923511860967}
   - component: {fileID: 7686840119679019355}
   m_Layer: 0
-  m_Name: Cargar
+  m_Name: Reiniciar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36267,7 +36267,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cargar
+  m_text: Reiniciar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d3b7bc5f12346243815d0beacd28af0, type: 2}
   m_sharedMaterial: {fileID: -2648101757417080186, guid: 9d3b7bc5f12346243815d0beacd28af0, type: 2}
