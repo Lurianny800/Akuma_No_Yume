@@ -7,20 +7,20 @@ public class Lur_PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel; // Panel de pausa general
     public GameObject mapPanel;   // Panel de mapa
-    private Animator pauseAnimator; // Animator para controlar la animación
-    private bool isAnimating = false; // Evita conflictos durante la animación
+    private Animator pauseAnimator;
     private bool isPaused = false; // Estado de pausa
+    private bool isAnimating = false;
 
     void Start()
     {
         isPaused = false;
-        pauseAnimator = pausePanel.GetComponent<Animator>(); // Obtener el Animator del panel de pausa
+        pauseAnimator = pausePanel.GetComponent<Animator>();
         pausePanel.SetActive(false); // Asegurarse de que el panel inicie inactivo
     }
     void Update()
     {
         // Tecla "Esc" para pausar o reanudar el juego
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !isAnimating)
         {
             TogglePause();            
         }
@@ -47,39 +47,35 @@ public class Lur_PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        
-        pausePanel.SetActive(true);
-        isAnimating = true; // Bloquea la interacción hasta que termine la animación
-        pauseAnimator.SetBool("isPaused", true); // Activar animación de entrada
-        StartCoroutine(WaitForAnimationToPause());
+        isPaused = true;
+        isAnimating = false;
+        pausePanel.SetActive(true); // Asegúrate de que el panel esté activo antes de reproducir la animación
+        pauseAnimator.Play("PauseSlideIn"); // Reproduce la animación de entrada
+        StartCoroutine(DelayPauseTime());
     }
 
     public void ResumeGame()
     {
-        isAnimating = true; // Bloquea la interacción hasta que termine la animación
-        pauseAnimator.SetBool("isPaused", false); // Activar animación de salida
-        StartCoroutine(WaitForAnimationToResume());
-        mapPanel.SetActive(false); // Asegura que el mapa se oculte al reanudar
+        isPaused = false;
+        isAnimating = true;
+        pauseAnimator.Play("PauseSlideOut"); // Reproduce la animación de salida
+        StartCoroutine(HidePausePanelAfterAnimation());
     }
-    private System.Collections.IEnumerator WaitForAnimationToPause()
+    private IEnumerator DelayPauseTime()
     {
-        // Espera el tiempo de la animación
-        yield return new WaitForSecondsRealtime(1f); // Ajusta según la duración de tu animación
-        Time.timeScale = 0f; // Congela el tiempo del juego
-        isPaused = true;
+        // Espera el tiempo de la animación antes de pausar el tiempo del juego
+        yield return new WaitForSecondsRealtime(1f); // Ajusta al tiempo real de la animación
+        Time.timeScale = 0f; // Pausa el tiempo del juego
         isAnimating = false;
     }
-
-    private System.Collections.IEnumerator WaitForAnimationToResume()
+    private IEnumerator HidePausePanelAfterAnimation()
     {
-        // Espera el tiempo de la animación
-        yield return new WaitForSecondsRealtime(1f); // Ajusta según la duración de tu animación
+        // Espera a que la animación de salida termine antes de desactivar el panel
+        yield return new WaitForSecondsRealtime(1f); // Ajusta al tiempo real de la animación
         pausePanel.SetActive(false);
         Time.timeScale = 1f; // Reanuda el tiempo del juego
-        isPaused = false;
         isAnimating = false;
     }
-
     // Método para alternar el estado del mapa y pausar el juego
     public void ToggleMap()
     {
