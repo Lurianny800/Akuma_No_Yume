@@ -86,20 +86,26 @@ public class enemigo : MonoBehaviour
         float elapsed = 0;
         while (elapsed < duration)
         {
-            elapsed += Time.unscaledDeltaTime;
+            elapsed += Time.unscaledDeltaTime; // Esperar sin ser afectado por Time.timeScale
             yield return null;
         }
 
         // Reposicionar al jugador
         player.transform.position = posicionInicial.position;
 
-        // Reanudar el tiempo
-        Time.timeScale = 1;
-
-        // Reactivar el input
-        if (playerScript != null)
+        // Verificar si el jugador aún tiene vidas
+        if (playerScript.currentHealth > 0)
         {
+            // Solo reanudar el tiempo si el jugador tiene vidas
+            Time.timeScale = 1;
+
+            // Reactivar el input
             playerScript.EnableInput(true);
+        }
+        else
+        {
+            // Si el jugador está muerto (0 vidas), no reanudar el tiempo
+            Debug.Log("Game Over: El jugador está muerto.");
         }
     }
 

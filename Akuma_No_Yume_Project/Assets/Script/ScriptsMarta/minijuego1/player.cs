@@ -20,17 +20,30 @@ public class player : MonoBehaviour
     [SerializeField] private int maxHealth = 5;
     [Space]
     [Tooltip("Shows player's current health")]
-    [SerializeField] private int currentHealth;
+    [SerializeField] public int currentHealth;
+
+    private buttons panelGameOver;
 
     private void Start()
     {
         currentHealth = maxHealth;
+        panelGameOver = FindObjectOfType<buttons>();
     }
 
     public void RemoveHealth()
     {
         currentHealth--;
         vidasHUB.DesactivarVida(currentHealth);
+
+        // Si la salud es 0 o menos, notificamos al PauseManager de que el juego terminó
+        if (currentHealth <= 0)
+        {
+            // Llamamos a la función GameOver desde el PauseManager
+            if (panelGameOver != null)
+            {
+                panelGameOver.GameOver();
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
