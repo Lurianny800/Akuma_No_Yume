@@ -64,14 +64,14 @@ public class Lur_PauseMenu : MonoBehaviour
     private IEnumerator DelayPauseTime()
     {
         // Espera el tiempo de la animación antes de pausar el tiempo del juego
-        yield return new WaitForSecondsRealtime(1f); // Ajusta al tiempo real de la animación
+        yield return new WaitForSecondsRealtime(0.1f); // Ajusta al tiempo real de la animación
         Time.timeScale = 0f; // Pausa el tiempo del juego
         isAnimating = false;
     }
     private IEnumerator HidePausePanelAfterAnimation()
     {
         // Espera a que la animación de salida termine antes de desactivar el panel
-        yield return new WaitForSecondsRealtime(1f); // Ajusta al tiempo real de la animación
+        yield return new WaitForSecondsRealtime(0.3f); // Ajusta al tiempo real de la animación
         pausePanel.SetActive(false);
         Time.timeScale = 1f; // Reanuda el tiempo del juego
         isAnimating = false;
@@ -93,12 +93,7 @@ public class Lur_PauseMenu : MonoBehaviour
             isPaused = true;
         }
     }
-    public void LoadOptions()
-    {
-        // Cargar la escena de Opciones
-        Time.timeScale = 1f; // Asegúrate de que el tiempo esté activo al cambiar de escena
-        SceneManager.LoadScene("Opciones");      
-    }
+    
     public void LoadMainMenu()
     {
         // Cargar la escena del Menú Principal
