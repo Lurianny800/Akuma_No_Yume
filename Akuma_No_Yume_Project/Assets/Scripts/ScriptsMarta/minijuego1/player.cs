@@ -7,30 +7,43 @@ public class player : MonoBehaviour
 {
     [Header("Movement")]
     [Tooltip("Adjust player's movement speed")]
-    public float moveSpeed;    
+    public float moveSpeed;
     private bool moving;
-    [HideInInspector]public Vector2 input;
+    private bool inputEnabled = true; // Nueva bandera para habilitar/deshabilitar input
+    [HideInInspector] public Vector2 input;
 
     [Space]
-    public healthHUD_Marta vidasHUB; //Llamar al panel
+    public healthHUD_Marta vidasHUB; // Llamar al panel
 
     [Header("Health")]
     [Tooltip("Adjust player's max health")]
-    [SerializeField] private int maxHealth = 5;    
+    [SerializeField] private int maxHealth = 5;
     [Space]
     [Tooltip("Shows player's current health")]
-    [SerializeField] private int currentHealth;
-    
+    [SerializeField] public int currentHealth;
+
+    private buttons panelGameOver;
 
     private void Start()
     {
         currentHealth = maxHealth;
+        panelGameOver = FindObjectOfType<buttons>();
     }
 
     public void RemoveHealth()
     {
         currentHealth--;
         vidasHUB.DesactivarVida(currentHealth);
+
+        // Si la salud es 0 o menos, notificamos al PauseManager de que el juego terminó
+        if (currentHealth <= 0)
+        {
+            // Llamamos a la función GameOver desde el PauseManager
+            if (panelGameOver != null)
+            {
+                panelGameOver.GameOver();
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -38,13 +51,15 @@ public class player : MonoBehaviour
         if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Path")
         {
             RemoveHealth();
-        }        
-        
+        }
     }
 
     private void Update()
-    {       
-       if (moving != true)
+    {
+        // Bloquear input si está deshabilitado
+        if (!inputEnabled) return;
+
+        if (!moving)
         {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
@@ -63,10 +78,8 @@ public class player : MonoBehaviour
 
                 StartCoroutine(Move(targetPosition));
             }
-
         }
     }
-
 
     IEnumerator Move(Vector3 targetPosition)
     {
@@ -81,8 +94,20 @@ public class player : MonoBehaviour
         moving = false;
     }
 
+    public void StopMovement()
+    {
+        StopAllCoroutines(); // Detiene todas las corrutinas activas
+        moving = false;      // Reinicia el estado de movimiento
+        input = Vector2.zero; // Reinicia el input
+    }
 
-
-
+    public void EnableInput(bool enable)
+    {
+        inputEnabled = enable; // Habilita o deshabilita el input
+        if (!enable)
+        {
+            StopMovement(); // Limpia el estado de movimiento si deshabilitamos el input
+        }
+    }
 
 }
