@@ -10,6 +10,7 @@ public class Lur_SceneTracker : MonoBehaviour
     // Cambiar a una escena por índice
     public void ChangeScene(int sceneIndex)
     {
+        Time.timeScale = 1;
         sceneData.previousSceneIndex = SceneManager.GetActiveScene().buildIndex; // Registrar la escena actual.
         SceneManager.LoadScene(sceneIndex); // Cambiar a la nueva escena.
     }
