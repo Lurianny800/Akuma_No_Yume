@@ -65,9 +65,10 @@ public class movimiento2 : MonoBehaviour
             }
 
             // Ataque con la tecla 'A'
-            if (Input.GetKeyDown(KeyCode.L))
+            if (Input.GetKeyDown(KeyCode.RightAlt))
             {
                 Attack();
+             
             }
         }
 

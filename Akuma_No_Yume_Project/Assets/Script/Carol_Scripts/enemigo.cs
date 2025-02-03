@@ -11,7 +11,10 @@ public class enemigo : MonoBehaviour
     private Rigidbody2D rb; // Componente Rigidbody2D para controlar el movimiento
     private Animator animator; // Animador del enemigo (si lo usas)
     private bool isPlayerGrounded;
-    public float health = 100f;  // Salud del enemigo
+    public float vida = 100f;  // Salud del enemigo
+    private float siguienteAtaqueTiempo = 0f;
+    public float tiempoEntreAtaques = 1f;
+    public int danio = 10;
 
     void Start()
     {
@@ -63,6 +66,23 @@ public class enemigo : MonoBehaviour
         }
         Debug.Log("Atacando al jugador");
     }
+    void OnCollisionEnter2D(Collision2D col)
+    { 
+     if (col.gameObject.CompareTag("Player")) // Asegúrate de que el jugador tenga la etiqueta "Jugador"
+        {
+            // Solo hace daño si el tiempo lo permite
+            if (Time.time >= siguienteAtaqueTiempo)
+            {
+                // Obtiene el componente JugadorVida del jugador y le aplica daño
+                vida jugadorVida = col.gameObject.GetComponent<vida>();
+                if (jugadorVida != null)
+                {
+                    jugadorVida.RecibirDanio(danio);  // Aplica el daño al jugador
+                    siguienteAtaqueTiempo = Time.time + tiempoEntreAtaques;  // Restablece el tiempo de ataque
+                }
+            }
+        }
+}
 
     // Función para patrullar (puedes añadir tu propia lógica de patrullaje aquí)
     void Patrol()
@@ -77,10 +97,10 @@ public class enemigo : MonoBehaviour
     // Método que se llama cuando el enemigo recibe daño
     public void TakeDamage(float damageAmount)
     {
-        health -= damageAmount;
-        Debug.Log("Enemy Health: " + health);
+        vida -= damageAmount;
+        Debug.Log("Enemy Health: " +vida);
 
-        if (health <= 0f)
+        if (vida <= 0f)
         {
             Die();  // Si la salud llega a 0, el enemigo muere
         }
