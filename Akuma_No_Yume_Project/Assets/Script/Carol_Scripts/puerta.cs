@@ -43,6 +43,7 @@ public class puerta : MonoBehaviour
         if (other.CompareTag("Player"))  // Asegúrate de que el jugador tenga el tag "Player"
         {
             playerInRange = true;
+            panel.SetActive(true);
         }
     }
 
