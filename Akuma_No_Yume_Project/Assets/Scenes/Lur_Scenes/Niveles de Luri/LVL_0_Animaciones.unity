@@ -34522,8 +34522,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.052, y: 0}
+  m_SizeDelta: {x: 100.105, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &829461070
 MonoBehaviour:
@@ -40378,6 +40378,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.833208
       objectReference: {fileID: 0}
+    - target: {fileID: 4798279722647682810, guid: bc3b6fbbad21b7d448f1ccd82faf3cdb, type: 3}
+      propertyPath: maxJumps
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8237235633044353066, guid: bc3b6fbbad21b7d448f1ccd82faf3cdb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -40440,11 +40444,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8237235633044353066, guid: bc3b6fbbad21b7d448f1ccd82faf3cdb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3
+      value: -0.73
       objectReference: {fileID: 0}
     - target: {fileID: 8237235633044353066, guid: bc3b6fbbad21b7d448f1ccd82faf3cdb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.73
+      value: -0.61
       objectReference: {fileID: 0}
     - target: {fileID: 8237235633044353066, guid: bc3b6fbbad21b7d448f1ccd82faf3cdb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -40468,9 +40472,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 75197504178902100, guid: bc3b6fbbad21b7d448f1ccd82faf3cdb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9025240495976064913}
-    - targetCorrespondingSourceObject: {fileID: 75197504178902100, guid: bc3b6fbbad21b7d448f1ccd82faf3cdb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9025240495976064921}
   m_SourcePrefab: {fileID: 100100000, guid: bc3b6fbbad21b7d448f1ccd82faf3cdb, type: 3}
 --- !u!1 &9025240495976064912 stripped
 GameObject:
@@ -40498,18 +40499,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &9025240495976064921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9025240495976064912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 393a661e51050e84a9b33ed5266b2c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &9157356616084183792
 CanvasRenderer:
   m_ObjectHideFlags: 0
