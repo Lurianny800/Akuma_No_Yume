@@ -1,33 +1,43 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Lur_HUBManager : MonoBehaviour
 {
     public static Lur_HUBManager Instance { get; private set; }
-    [Tooltip("A�ade el Panel de Vidas.")]
+    [Tooltip("Añade el Panel de Vidas.")]
     public Lur_VidasHUB vidasHUB; //Llamar al panel
     [Tooltip("Escribe el nombre de la escena que se va a recargar cuando pierda.")]
     public string sceneName;
     public int PuntosTotales { get; private set; }
-
+    public Lur_HealingTower torre; //Ref al script
     private int vidas = 4;
     private float cooldownCuracion = 5f; // Cooldown de 5 segundos
     private float tiempoUltimaCuracion;
-
     private bool cercaDeTorre;
 
 
     private void Awake()
     {
-        if (Instance == null)
-        {
+        if(Instance == null)
+    {
             Instance = this;
+        }
+    else
+        {
+            Debug.Log("Cuidado! Más de un GameManager en escena.");
+            Destroy(gameObject);
+        }
+
+        if (torre == null)
+        {
+            Debug.LogError("❌ ERROR: La referencia a la torre es NULL en Lur_HUBManager. Asegúrate de asignarla en el Inspector.");
         }
         else
         {
-            Debug.Log("Cuidado! Mas de un GameManager en escena.");
+            Debug.Log("✅ Torre asignada correctamente en Lur_HUBManager.");
         }
     }
     private void Update()
@@ -59,10 +69,10 @@ public class Lur_HUBManager : MonoBehaviour
     }
     private void IntentarCurar()
     {
-        // Verificar si est� cerca de una torre.
+        // Verificar si está cerca de una torre.
         if (!cercaDeTorre)
         {
-            Debug.Log("No est�s cerca de una torre para curarte.");
+            Debug.Log("No estás cerca de una torre para curarte.");
             return;
         }
         //Verificar si ha pasado el CoolDown
@@ -72,11 +82,21 @@ public class Lur_HUBManager : MonoBehaviour
             if (vidaRecuperada)
             {
                 tiempoUltimaCuracion = Time.time; // Reinicia el tiempo del cooldown
+                if (torre != null) 
+                {
+                    Debug.Log("Iniciando cooldown en la torre...");
+                    torre.IniciarCooldown(cooldownCuracion);
+                }
+                else
+                {
+                    Debug.LogError("ERROR: La referencia a la torre es NULL. Asegúrate de asignarla en el Inspector.");
+                }
+
             }
         }
         else
         {
-            Debug.Log("Curaci�n en cooldown. Espera un poco m�s.");
+            Debug.Log("Curación en cooldown. Espera un poco más.");
 
 
         }
@@ -85,7 +105,7 @@ public class Lur_HUBManager : MonoBehaviour
     {
         if (vidas == 4)
         {
-            Debug.Log("Ya tienes el m�ximo de vidas.");
+            Debug.Log("Ya tienes el máximo de vidas.");
             return false;
         }
 

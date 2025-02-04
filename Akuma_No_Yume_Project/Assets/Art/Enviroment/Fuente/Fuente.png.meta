@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d1a8355e33e36524c868c3af47142606
+guid: ed4d8bcf029f0db4aabf1766cfd5c199
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 180
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DadHK_0
+      name: Fuente_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 448
-        height: 448
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ce7169f520ef344f9cdb8f961e16855
-      internalID: 140180714
+      spriteID: b8ce33d716730fe42a8d730130068320
+      internalID: -865685465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DadHK_1
+      name: Fuente_1
       rect:
         serializedVersion: 2
-        x: 448
+        x: 800
         y: 0
-        width: 448
-        height: 448
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b71d94aa2df88941a3b8dcaad490c6f
-      internalID: 2067684149
+      spriteID: 24e7cb27f43a1fb419240af89f02bd88
+      internalID: 1519431161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fuente_2
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cae7585d95acc9478a65ecb53091410
+      internalID: 1945267702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fuente_3
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f080e78995f784faa5623dfba24056
+      internalID: 1979399462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fuente_4
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e6fff30ee38cb848b6bccda4dc8242c
+      internalID: -804043221
       vertices: []
       indices: 
       edges: []
@@ -149,8 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DadHK_0: 140180714
-      DadHK_1: 2067684149
+      Fuente_0: -865685465
+      Fuente_1: 1519431161
+      Fuente_2: 1945267702
+      Fuente_3: 1979399462
+      Fuente_4: -804043221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

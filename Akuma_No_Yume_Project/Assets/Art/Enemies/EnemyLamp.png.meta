@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d1a8355e33e36524c868c3af47142606
+guid: 8cc69eeed92b7044bb209a30ee5ccc1f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DadHK_0
+      name: EnemyLamp_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ce7169f520ef344f9cdb8f961e16855
-      internalID: 140180714
+      spriteID: 3e22fb9e55f34e641b1cca37622539e7
+      internalID: -440840327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DadHK_1
+      name: EnemyLamp_1
       rect:
         serializedVersion: 2
         x: 448
@@ -132,8 +132,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b71d94aa2df88941a3b8dcaad490c6f
-      internalID: 2067684149
+      spriteID: e3f2b4069a386f04491325f88c3fb15b
+      internalID: 913223971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyLamp_2
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 448
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a33c6b85ac05f540bfb8ff3177ac343
+      internalID: 543590543
       vertices: []
       indices: 
       edges: []
@@ -149,8 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DadHK_0: 140180714
-      DadHK_1: 2067684149
+      EnemyLamp_0: -440840327
+      EnemyLamp_1: 913223971
+      EnemyLamp_2: 543590543
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

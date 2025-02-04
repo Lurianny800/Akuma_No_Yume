@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ed4d8bcf029f0db4aabf1766cfd5c199
+guid: 74689ada75846ca4a967398c253f70b1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fuente_0
+      name: EnemyRawr_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
-        height: 800
+        width: 448
+        height: 448
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8ce33d716730fe42a8d730130068320
-      internalID: -865685465
+      spriteID: ea417b5f27fbc8f40b327a1cb015a53b
+      internalID: -1991492193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fuente_1
+      name: EnemyRawr_1
       rect:
         serializedVersion: 2
-        x: 800
+        x: 448
         y: 0
-        width: 800
-        height: 800
+        width: 448
+        height: 448
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24e7cb27f43a1fb419240af89f02bd88
-      internalID: 1519431161
+      spriteID: 70496fbb76a178a4586b3699f2866866
+      internalID: -1403452710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fuente_2
+      name: EnemyRawr_2
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 896
         y: 0
-        width: 800
-        height: 800
+        width: 448
+        height: 448
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cae7585d95acc9478a65ecb53091410
-      internalID: 1945267702
+      spriteID: 4aaf8d57221b8a844a125a3c9207d2ea
+      internalID: -1372392005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fuente_3
+      name: EnemyRawr_3
       rect:
         serializedVersion: 2
-        x: 2400
+        x: 1344
         y: 0
-        width: 800
-        height: 800
+        width: 448
+        height: 448
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,29 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4f080e78995f784faa5623dfba24056
-      internalID: 1979399462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fuente_4
-      rect:
-        serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e6fff30ee38cb848b6bccda4dc8242c
-      internalID: -804043221
+      spriteID: 74fae9c2977ec3940913eaf5bbc351d6
+      internalID: 1990427865
       vertices: []
       indices: 
       edges: []
@@ -212,11 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fuente_0: -865685465
-      Fuente_1: 1519431161
-      Fuente_2: 1945267702
-      Fuente_3: 1979399462
-      Fuente_4: -804043221
+      EnemyRawr_0: -1991492193
+      EnemyRawr_1: -1403452710
+      EnemyRawr_2: -1372392005
+      EnemyRawr_3: 1990427865
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

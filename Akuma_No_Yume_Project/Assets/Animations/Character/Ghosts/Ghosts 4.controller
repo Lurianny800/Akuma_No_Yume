@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ghosts
+  m_Name: Ghosts 4
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -32,8 +32,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 7914208671160393224}
-    m_Position: {x: 290, y: 100, z: 0}
+    m_State: {fileID: 4064198857073807056}
+    m_Position: {x: 300, y: 110, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -43,15 +43,15 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 7914208671160393224}
---- !u!1102 &7914208671160393224
+  m_DefaultState: {fileID: 4064198857073807056}
+--- !u!1102 &4064198857073807056
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ghost1
+  m_Name: Ghost2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -64,7 +64,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 68654680be501e842a3652af083fdb79, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6578dda869e28304a88fe4de385f6586, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

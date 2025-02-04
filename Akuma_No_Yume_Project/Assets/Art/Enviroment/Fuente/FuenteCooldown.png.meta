@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d1a8355e33e36524c868c3af47142606
+guid: d196c7b6ff9c3f345bf9a1e510c5cdc9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 90
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DadHK_0
+      name: FuenteCooldown_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 448
-        height: 448
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ce7169f520ef344f9cdb8f961e16855
-      internalID: 140180714
+      spriteID: a234b862cf1c1bd44ae43188084150fa
+      internalID: -1982500358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DadHK_1
+      name: FuenteCooldown_1
       rect:
         serializedVersion: 2
-        x: 448
+        x: 400
         y: 0
-        width: 448
-        height: 448
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b71d94aa2df88941a3b8dcaad490c6f
-      internalID: 2067684149
+      spriteID: ad84c91ec99e70f4abb1e6b493499ef7
+      internalID: 1624118565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuenteCooldown_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1703e009cb25e5a43af1787d7050e363
+      internalID: -1743100207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuenteCooldown_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01747b59dc979c24d90c5fb7e3578625
+      internalID: -782597078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuenteCooldown_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863a8e5a9bbc76f469b7f909f51b6250
+      internalID: 273673456
       vertices: []
       indices: 
       edges: []
@@ -149,8 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DadHK_0: 140180714
-      DadHK_1: 2067684149
+      FuenteCooldown_0: -1982500358
+      FuenteCooldown_1: 1624118565
+      FuenteCooldown_2: -1743100207
+      FuenteCooldown_3: -782597078
+      FuenteCooldown_4: 273673456
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
