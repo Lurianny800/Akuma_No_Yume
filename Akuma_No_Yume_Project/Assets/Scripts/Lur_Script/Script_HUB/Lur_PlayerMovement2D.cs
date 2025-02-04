@@ -96,7 +96,7 @@ public class Lur_PlayerMovement2D : MonoBehaviour
             StartCoroutine(ReactivarMovimiento()); // Espera y reactiva el script
         }
 
-        if (other.gameObject.name == "Torre_Curativa")
+        if (other.gameObject.name == "Tower")
         {
             puedeCurarse = true; // Permite curarse cuando está dentro del collider
         }
@@ -104,7 +104,7 @@ public class Lur_PlayerMovement2D : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.name == "Torre_Curativa")
+        if (other.gameObject.name == "Tower")
         {
             puedeCurarse = false; // Ya no puede curarse al salir del collider
         }
