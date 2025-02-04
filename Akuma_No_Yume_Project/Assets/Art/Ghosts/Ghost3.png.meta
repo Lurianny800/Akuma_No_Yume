@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41e152b9f70106b469056ffa1022c055
+guid: 0de075ca2c9c5bb42b529b8631aefe54
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gift_Skin_0
+      name: Ghost3_0
       rect:
         serializedVersion: 2
-        x: 40
+        x: 0
         y: 0
-        width: 320
-        height: 312
+        width: 156
+        height: 336
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36443ebfddf8ec94ebe276f530c79f93
-      internalID: -904253633
+      spriteID: 79391a67d681e0c4b8c7dd3af6035a43
+      internalID: 1580376238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gift_Skin_1
+      name: Ghost3_1
       rect:
         serializedVersion: 2
-        x: 440
+        x: 156
         y: 0
-        width: 320
-        height: 400
+        width: 156
+        height: 336
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb865e81d0038db4587d87237dfc5fd2
-      internalID: 687980500
+      spriteID: cdb71ad8661c02f4997497a98afd9833
+      internalID: 1669766839
       vertices: []
       indices: 
       edges: []
@@ -149,8 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gift_Skin_0: -904253633
-      Gift_Skin_1: 687980500
+      Ghost3_0: 1580376238
+      Ghost3_1: 1669766839
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

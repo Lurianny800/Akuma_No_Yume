@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41e152b9f70106b469056ffa1022c055
+guid: e58d71466b2a39c48b4abb5fce269d93
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 160
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gift_Skin_0
+      name: Ghost1_0
       rect:
         serializedVersion: 2
-        x: 40
+        x: 0
         y: 0
-        width: 320
-        height: 312
+        width: 156
+        height: 456
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36443ebfddf8ec94ebe276f530c79f93
-      internalID: -904253633
+      spriteID: 8e58d23269c2d894889cbd81c6a6a7ad
+      internalID: 576781978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gift_Skin_1
+      name: Ghost1_1
       rect:
         serializedVersion: 2
-        x: 440
+        x: 156
         y: 0
-        width: 320
-        height: 400
+        width: 156
+        height: 456
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb865e81d0038db4587d87237dfc5fd2
-      internalID: 687980500
+      spriteID: 5dc249a5cc4adf5499445c5df794ad00
+      internalID: 1863121183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_2
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 156
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb87299d4168bb54b83afcbc2bcdbd72
+      internalID: 1160975746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_3
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 0
+        width: 156
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c88a728a24ce32f47b5d9de32e0c810d
+      internalID: -584412449
       vertices: []
       indices: 
       edges: []
@@ -149,8 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gift_Skin_0: -904253633
-      Gift_Skin_1: 687980500
+      Ghost1_0: 576781978
+      Ghost1_1: 1863121183
+      Ghost1_2: 1160975746
+      Ghost1_3: -584412449
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
