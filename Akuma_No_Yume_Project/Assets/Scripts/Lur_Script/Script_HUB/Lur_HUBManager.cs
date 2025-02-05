@@ -69,36 +69,39 @@ public class Lur_HUBManager : MonoBehaviour
     }
     private void IntentarCurar()
     {
-        // Verificar si está cerca de una torre.
-        if (!cercaDeTorre)
+        Debug.Log("Intentando curar...");
+
+        // Buscar todas las torres en la escena con el tag "Torre"
+        GameObject[] torres = GameObject.FindGameObjectsWithTag("Torre");
+
+        if (torres.Length == 0) // Si no hay torres en la escena
         {
-            Debug.Log("No estás cerca de una torre para curarte.");
+            Debug.Log("❌ No hay torres en la escena.");
             return;
         }
-        //Verificar si ha pasado el CoolDown
+
+        // Verificar si ha pasado el cooldown
         if (Time.time - tiempoUltimaCuracion >= cooldownCuracion)
         {
             bool vidaRecuperada = RecuperarVida();
             if (vidaRecuperada)
             {
                 tiempoUltimaCuracion = Time.time; // Reinicia el tiempo del cooldown
-                if (torre != null) 
-                {
-                    Debug.Log("Iniciando cooldown en la torre...");
-                    torre.IniciarCooldown(cooldownCuracion);
-                }
-                else
-                {
-                    Debug.LogError("ERROR: La referencia a la torre es NULL. Asegúrate de asignarla en el Inspector.");
-                }
 
+                foreach (GameObject torreGO in torres)
+                {
+                    Lur_HealingTower torre = torreGO.GetComponent<Lur_HealingTower>();
+                    if (torre != null)
+                    {
+                        Debug.Log("🔄 Iniciando cooldown en torre: " + torreGO.name);
+                        torre.IniciarCooldown(cooldownCuracion);
+                    }
+                }
             }
         }
         else
         {
-            Debug.Log("Curación en cooldown. Espera un poco más.");
-
-
+            Debug.Log("⏳ Curación en cooldown. Espera un poco más.");
         }
     }
     public bool RecuperarVida()

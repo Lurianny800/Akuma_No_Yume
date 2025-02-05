@@ -4123,7 +4123,7 @@ Transform:
   m_GameObject: {fileID: 147375925}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -143.57643, y: 15.144114, z: -0.2417616}
+  m_LocalPosition: {x: -143.57643, y: 15.49, z: -0.2417616}
   m_LocalScale: {x: 2.2797801, y: 2.1826963, z: 0.96111953}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -251048,7 +251048,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2313817826823836417, guid: 92473cd4a18b95848963aadea839433d, type: 3}
       propertyPath: m_Name
-      value: 'Tower '
+      value: Tower  (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7418972446712978781, guid: 92473cd4a18b95848963aadea839433d, type: 3}
       propertyPath: m_LocalPosition.x
