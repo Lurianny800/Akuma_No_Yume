@@ -76,18 +76,22 @@ public class Lur_PlayerMovement2D : MonoBehaviour
             jumpsRemaining--;
         }
 
-        // Activar animación de curación al presionar "F" dentro del collider
-        if (puedeCurarse && Input.GetKeyDown(KeyCode.F))
+        // Si presionas F y estás cerca de la torre, intentar curarse
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            anim.SetTrigger("Healing"); // Activa la animación de curación
-            StartCoroutine(BloquearMovimiento(2f)); // Bloquea movimiento por 2 segundos
+            Lur_HUBManager.Instance.IntentarCurarse();
         }
+    }
+    public void ActivarAnimacionCuracion()
+    {
+        anim.SetTrigger("Healing");
+        StartCoroutine(BloquearMovimiento(2f));
     }
 
     // Detectar colisión con el objeto "Logro_V1"
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Logros"))
+        if (other.CompareTag("Coleccionable"))
         {
             anim.SetTrigger("PickUp"); // Activa la animación
             rb.velocity = Vector2.zero; // Detiene cualquier movimiento actual
@@ -96,7 +100,7 @@ public class Lur_PlayerMovement2D : MonoBehaviour
             StartCoroutine(ReactivarMovimiento()); // Espera y reactiva el script
         }
 
-        if (other.gameObject.name == "Tower")
+        if (other.CompareTag("Torre"))
         {
             puedeCurarse = true; // Permite curarse cuando está dentro del collider
         }
@@ -104,7 +108,7 @@ public class Lur_PlayerMovement2D : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.name == "Tower")
+        if (other.CompareTag("Torre"))
         {
             puedeCurarse = false; // Ya no puede curarse al salir del collider
         }
