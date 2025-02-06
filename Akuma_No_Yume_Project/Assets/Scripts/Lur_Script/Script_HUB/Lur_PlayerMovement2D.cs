@@ -1,4 +1,4 @@
-ï»¿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,7 +18,7 @@ public class Lur_PlayerMovement2D : MonoBehaviour
     private bool isGrounded2;
     private bool isGrounded3;
     private Vector3 originalScale;
-    public bool puedeCurarse = false; // Permite saber si estÃ¡ en la zona de curaciÃ³n
+    private bool puedeCurarse = false; // Permite saber si está en la zona de curación
 
     [Header("Chequeo de suelo")]
     public Transform groundCheck;
@@ -40,26 +40,26 @@ public class Lur_PlayerMovement2D : MonoBehaviour
         float moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
-        // AnimaciÃ³n de caminar
+        // Animación de caminar
         anim.SetFloat("Speed", Mathf.Abs(moveInput));
 
-        // Voltear el personaje sin cambiar su tamaÃ±o
+        // Voltear el personaje sin cambiar su tamaño
         if (moveInput > 0)
             transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
         else if (moveInput < 0)
             transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
 
-        // Verificar si estÃ¡ en el suelo
+        // Verificar si está en el suelo
         isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
         isGrounded2 = Physics2D.Raycast(groundCheck2.position, Vector2.down, groundCheckDistance, groundLayer);
         isGrounded3 = Physics2D.Raycast(groundCheck3.position, Vector2.down, groundCheckDistance, groundLayer);
 
         bool onGround = isGrounded || isGrounded2 || isGrounded3;
 
-        // AnimaciÃ³n de suelo
+        // Animación de suelo
         anim.SetBool("isGrounded", onGround);
 
-        // Restablecer saltos si estÃ¡ en el suelo
+        // Restablecer saltos si está en el suelo
         if (onGround && rb.velocity.y <= 0)
         {
             jumpsRemaining = maxJumps;
@@ -76,39 +76,35 @@ public class Lur_PlayerMovement2D : MonoBehaviour
             jumpsRemaining--;
         }
 
-        // Si presionas F y estÃ¡s cerca de la torre, intentar curarse
-        if (Input.GetKeyDown(KeyCode.F))
+        // Activar animación de curación al presionar "F" dentro del collider
+        if (puedeCurarse && Input.GetKeyDown(KeyCode.F))
         {
-            Lur_HUBManager.Instance.IntentarCurarse();
+            anim.SetTrigger("Healing"); // Activa la animación de curación
+            StartCoroutine(BloquearMovimiento(2f)); // Bloquea movimiento por 2 segundos
         }
     }
-    public void ActivarAnimacionCuracion()
-    {
-        anim.SetTrigger("Healing");
-        StartCoroutine(BloquearMovimiento(2f));
-    }
 
-    // Detectar colisiÃ³n con el objeto "Logro_V1"
+    // Detectar colisión con el objeto "Logro_V1"
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Coleccionable")
+        if (other.CompareTag("Logros"))
         {
-            anim.SetTrigger("PickUp"); // Activa la animaciÃ³n
+            anim.SetTrigger("PickUp"); // Activa la animación
             rb.velocity = Vector2.zero; // Detiene cualquier movimiento actual
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation; // Congela el movimiento lateral
             enabled = false; // Desactiva este script
             StartCoroutine(ReactivarMovimiento()); // Espera y reactiva el script
         }
 
-        if (other.CompareTag("Torre"))
+        if (other.gameObject.name == "Tower")
         {
-            puedeCurarse = true; // Permite curarse cuando estÃ¡ dentro del collider
+            puedeCurarse = true; // Permite curarse cuando está dentro del collider
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Torre"))
+        if (other.gameObject.name == "Tower")
         {
             puedeCurarse = false; // Ya no puede curarse al salir del collider
         }
@@ -116,7 +112,7 @@ public class Lur_PlayerMovement2D : MonoBehaviour
 
     private IEnumerator ReactivarMovimiento()
     {
-        yield return new WaitForSeconds(1.3f);  // Espera a que termine la animaciÃ³n
+        yield return new WaitForSeconds(1.3f);  // Espera a que termine la animación
 
         rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Descongela el movimiento lateral
         enabled = true; // Reactiva el script
