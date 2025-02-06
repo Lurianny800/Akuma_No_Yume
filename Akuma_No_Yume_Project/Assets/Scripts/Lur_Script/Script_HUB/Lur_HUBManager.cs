@@ -17,6 +17,8 @@ public class Lur_HUBManager : MonoBehaviour
     private float cooldownCuracion = 5f; // Cooldown de 5 segundos
     private float tiempoUltimaCuracion;
     private bool cercaDeTorre;
+    public Lur_PlayerMovement2D player; // Referencia al jugador
+    public int vidasActuales => vidas;
 
 
     private void Awake()
@@ -42,12 +44,20 @@ public class Lur_HUBManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        
+    }
+    public void IntentarCurarse()
+    {
+        if (cercaDeTorre && vidas < 4 && Time.time - tiempoUltimaCuracion >= cooldownCuracion)
         {
-            IntentarCurar();
+            // Si el jugador tiene menos de 4 vidas y el cooldown ha pasado, curar
+            ActivarCuracion();
+        }
+        else
+        {
+            Debug.Log("No puedes curarte ahora.");
         }
     }
-
     public void SumarPuntos(int puntosASumar)
     {
         PuntosTotales += puntosASumar;
@@ -64,10 +74,10 @@ public class Lur_HUBManager : MonoBehaviour
 
             SceneManager.LoadScene(sceneName);
         }
-
+        Debug.Log("Vida menos. Vidas total= "+ vidas);
         vidasHUB.DesactivarVida(vidas);
     }
-    private void IntentarCurar()
+    private void ActivarCuracion()
     {
         Debug.Log("Intentando curar...");
 
@@ -82,22 +92,30 @@ public class Lur_HUBManager : MonoBehaviour
 
         // Verificar si ha pasado el cooldown
         if (Time.time - tiempoUltimaCuracion >= cooldownCuracion)
-        {
-            bool vidaRecuperada = RecuperarVida();
-            if (vidaRecuperada)
+        {                         
+              
+            if (RecuperarVida())
             {
-                tiempoUltimaCuracion = Time.time; // Reinicia el tiempo del cooldown
+                tiempoUltimaCuracion = Time.time; // Reinicia el tiempo del cooldown                                                
 
+                //Llamamos a la animación de curación en el jugador
+        Lur_PlayerMovement2D playerMovement = FindObjectOfType<Lur_PlayerMovement2D>();
+                if (playerMovement != null)
+                {
+                    playerMovement.ActivarAnimacionCuracion();
+                }
+                // Iniciar cooldown de las torres
                 foreach (GameObject torreGO in torres)
                 {
-                    Lur_HealingTower torre = torreGO.GetComponent<Lur_HealingTower>();
+                        Lur_HealingTower torre = torreGO.GetComponent<Lur_HealingTower>();
                     if (torre != null)
                     {
-                        Debug.Log("🔄 Iniciando cooldown en torre: " + torreGO.name);
-                        torre.IniciarCooldown(cooldownCuracion);
+                            Debug.Log("🔄 Iniciando cooldown en torre: " + torreGO.name);
+                            torre.IniciarCooldown(cooldownCuracion);
                     }
                 }
             }
+           
         }
         else
         {
@@ -111,9 +129,15 @@ public class Lur_HUBManager : MonoBehaviour
             Debug.Log("Ya tienes el máximo de vidas.");
             return false;
         }
+        if (player != null)
+        {
+            player.ActivarAnimacionCuracion();
+        }
 
         vidasHUB.ActivarVida(vidas);
         vidas += 1;
+
+        Debug.Log("Añadido 1. Vida total = "+ vidas + "VidaAnim");
         return true;
     }
 
