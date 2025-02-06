@@ -70,9 +70,8 @@ public class Lur_HUBManager : MonoBehaviour
 
         if (vidas == 0)
         {
-            // Reiniciamos el nivel.
-
-            SceneManager.LoadScene(sceneName);
+            Lur_GameOverManager.Instance.GameOver(); // Activar pantalla de Game Over
+            return;
         }
         Debug.Log("Vida menos. Vidas total= "+ vidas);
         vidasHUB.DesactivarVida(vidas);

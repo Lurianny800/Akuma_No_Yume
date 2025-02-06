@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4637815335397182862}
   m_Layer: 0
   m_Name: Gift_Skin_0
-  m_TagString: Untagged
+  m_TagString: Coleccionable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
