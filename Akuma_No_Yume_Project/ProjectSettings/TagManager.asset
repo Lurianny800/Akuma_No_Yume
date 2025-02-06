@@ -9,6 +9,7 @@ TagManager:
   - Torre
   - Enemy
   - Path
+  - Logros
   layers:
   - Default
   - TransparentFX

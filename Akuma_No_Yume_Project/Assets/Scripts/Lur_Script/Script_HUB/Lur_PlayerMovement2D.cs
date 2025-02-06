@@ -87,7 +87,7 @@ public class Lur_PlayerMovement2D : MonoBehaviour
     // Detectar colisión con el objeto "Logro_V1"
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Logro_V1")
+        if (other.CompareTag("Logros"))
         {
             anim.SetTrigger("PickUp"); // Activa la animación
             rb.velocity = Vector2.zero; // Detiene cualquier movimiento actual
