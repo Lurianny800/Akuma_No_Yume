@@ -2660,16 +2660,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1208985950}
-        m_TargetAssemblyTypeName: Lur_SceneTracker, Assembly-CSharp
+      - m_Target: {fileID: 1731152485}
+        m_TargetAssemblyTypeName: BotonSceneConPosicion, Assembly-CSharp
         m_MethodName: ChangeScene
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: LVL_0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1236828036
@@ -4129,6 +4129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731152483}
   - component: {fileID: 1731152484}
+  - component: {fileID: 1731152485}
   m_Layer: 0
   m_Name: PauseManager
   m_TagString: Untagged
@@ -4166,6 +4167,19 @@ MonoBehaviour:
   pausePanel: {fileID: 956937369}
   gameOverPanel: {fileID: 73803017}
   player: {fileID: 511876709}
+--- !u!114 &1731152485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731152482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df81dc66a0b88544a9baf32f940f39f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTransform: {fileID: 1304641602200322076, guid: 6dba142fba823eb4188f22153e22a4cf, type: 3}
 --- !u!1 &1737034176
 GameObject:
   m_ObjectHideFlags: 0
@@ -12025,7 +12039,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
@@ -12046,7 +12060,7 @@ Transform:
   m_GameObject: {fileID: 1882684588}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.5, y: -10.24, z: 0}
+  m_LocalPosition: {x: -8.5, y: -10.65, z: 0}
   m_LocalScale: {x: 12.07, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

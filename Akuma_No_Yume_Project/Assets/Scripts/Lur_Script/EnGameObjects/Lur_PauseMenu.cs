@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Lur_PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel; // Panel de pausa general
-    public GameObject mapPanel;   // Panel de mapa
     private Animator pauseAnimator;
     private bool isPaused = false; // Estado de pausa
     private bool isAnimating = false;
@@ -23,13 +22,7 @@ public class Lur_PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !isAnimating)
         {
             TogglePause();            
-        }
-
-        // Tecla "M" para abrir o cerrar el mapa
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            ToggleMap();
-        }
+        }        
     }
 
     // Método para pausar y reanudar el juego
@@ -75,25 +68,7 @@ public class Lur_PauseMenu : MonoBehaviour
         pausePanel.SetActive(false);
         Time.timeScale = 1f; // Reanuda el tiempo del juego
         isAnimating = false;
-    }
-    // Método para alternar el estado del mapa y pausar el juego
-    public void ToggleMap()
-    {
-        if (mapPanel.activeSelf)
-        {
-            mapPanel.SetActive(false); // Oculta el mapa
-            Time.timeScale = 1f;       // Reanuda el juego
-            isPaused = false;
-            
-        }
-        else
-        {
-            mapPanel.SetActive(true);  // Muestra el mapa
-            Time.timeScale = 0f;       // Pausa el juego
-            isPaused = true;
-        }
-    }
-    
+    }    
     public void LoadMainMenu()
     {
         // Cargar la escena del Menú Principal
