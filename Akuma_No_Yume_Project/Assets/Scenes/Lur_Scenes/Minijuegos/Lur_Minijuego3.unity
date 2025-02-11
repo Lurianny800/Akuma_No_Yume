@@ -568,7 +568,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4806077608782675376}
         m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
         m_MethodName: RemoverUltimaFigura
         m_Mode: 1
@@ -1687,8 +1687,9 @@ MonoBehaviour:
   - {fileID: 2128480778}
   - {fileID: 1231068884}
   - {fileID: 1127717972}
-  figuraSeleccionada: {fileID: 0}
   panelSeleccion: {fileID: 24444090}
+  figurasParent: {fileID: 0}
+  canvas: {fileID: 81314571}
 --- !u!1 &9010556228635216825
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,47 +6,40 @@ public class Draggable : MonoBehaviour
     private bool isDragging = false;
     public float gridSize = 1.0f; // Tamaño de la celda en el grid
 
-    private void Start()
-    {
-        // Aseguramos que la figura comience bien posicionada
-        ResetPosition();
-    }
-
     private void OnMouseDown()
     {
         if (GetComponent<Collider2D>() == null)
         {
-            Debug.LogError("El objeto no tiene un Collider2D. No podrá ser arrastrado.");
+            Debug.LogError("El objeto no tiene un Collider2D.");
             return;
         }
 
-        // Calculamos el offset basado en la posición actual del objeto y el mouse
-        offset = transform.position - GetMouseWorldPosition();
+        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         isDragging = true;
-
-        Debug.Log("Iniciando el arrastre");
     }
 
     private void OnMouseDrag()
     {
         if (isDragging)
         {
-            Vector3 mousePos = GetMouseWorldPosition() + offset;
-
-            // Redondeamos la posición para que se mueva en pasos de grid
-            float x = Mathf.Round(mousePos.x / gridSize) * gridSize;
-            float y = Mathf.Round(mousePos.y / gridSize) * gridSize;
-
-            // Asignamos la nueva posición ajustada al grid
-            transform.position = new Vector3(x, y, 0f);
-
-            Debug.Log($"Posición ajustada al grid: {transform.position}");
+            if (isDragging)
+            {
+                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+                mousePos.z = 0;
+                transform.position = mousePos;
+            }
         }
     }
-
     private void OnMouseUp()
     {
         isDragging = false;
+        AdjustToGrid();
+    }
+    private void AdjustToGrid()
+    {
+        float x = Mathf.Round(transform.position.x / gridSize) * gridSize;
+        float y = Mathf.Round(transform.position.y / gridSize) * gridSize;
+        transform.position = new Vector3(x, y, 0f);
     }
 
     // Método para obtener la posición del mouse en coordenadas de mundo
@@ -57,14 +50,22 @@ public class Draggable : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePosition);
     }
 
-    // Método para resetear la posición de la figura al centro de la cámara
-    public void ResetPosition()
+    // Método para centrar la figura en la pantalla utilizando el Canvas
+    public void CenterFigure(Canvas canvas)
     {
-        Vector3 worldCenter = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, -Camera.main.transform.position.z));
-        worldCenter.z = 0; // Nos aseguramos de que la figura se mantenga en 2D
+        // Obtener la posición central de la cámara en el mundo (centrado en la cámara)
+        Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+        Vector3 worldCenter = Camera.main.ScreenToWorldPoint(new Vector3(screenCenter.x, screenCenter.y, Camera.main.nearClipPlane));
+        worldCenter.z = 0;
 
+        // Si el canvas está en 'Screen Space' o 'World Space', manejamos la posición
+        if (canvas.renderMode == RenderMode.ScreenSpaceOverlay || canvas.renderMode == RenderMode.ScreenSpaceCamera)
+        {
+            // Convertimos la posición del centro de la cámara (en pantalla) a las coordenadas del Canvas
+            RectTransformUtility.ScreenPointToWorldPointInRectangle(canvas.transform as RectTransform, screenCenter, Camera.main, out worldCenter);
+        }
+
+        // Establecemos la nueva posición de la figura en el centro de la cámara (dentro del Canvas)
         transform.position = worldCenter;
-
-        Debug.Log($"Figura reposicionada en: {transform.position}");
     }
 }
