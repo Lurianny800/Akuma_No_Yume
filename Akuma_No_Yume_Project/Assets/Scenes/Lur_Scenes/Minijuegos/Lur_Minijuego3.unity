@@ -1688,8 +1688,7 @@ MonoBehaviour:
   - {fileID: 1231068884}
   - {fileID: 1127717972}
   panelSeleccion: {fileID: 24444090}
-  figurasParent: {fileID: 0}
-  canvas: {fileID: 81314571}
+  botonRemover: {fileID: 104495873}
 --- !u!1 &9010556228635216825
 GameObject:
   m_ObjectHideFlags: 0
