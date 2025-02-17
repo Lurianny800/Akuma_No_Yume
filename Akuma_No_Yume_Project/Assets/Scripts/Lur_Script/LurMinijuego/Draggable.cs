@@ -6,6 +6,9 @@ public class Draggable : MonoBehaviour
     private bool isDragging = false;
     public float gridSize = 1.0f; // Tamaño de la celda en el grid
 
+    // Límites personalizados (ajústalos en el Inspector de Unity)
+    public float minX = -5f, maxX = 5f, minY = -3f, maxY = 3f;
+
     private void OnMouseDown()
     {
         if (GetComponent<Collider2D>() == null)
@@ -22,19 +25,23 @@ public class Draggable : MonoBehaviour
     {
         if (isDragging)
         {
-            if (isDragging)
-            {
-                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
-                mousePos.z = 0;
-                transform.position = mousePos;
-            }
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+            mousePos.z = 0;
+
+            // Aplicar los límites definidos por el usuario
+            mousePos.x = Mathf.Clamp(mousePos.x, minX, maxX);
+            mousePos.y = Mathf.Clamp(mousePos.y, minY, maxY);
+
+            transform.position = mousePos;
         }
     }
+
     private void OnMouseUp()
     {
         isDragging = false;
         AdjustToGrid();
     }
+
     private void AdjustToGrid()
     {
         float x = Mathf.Round(transform.position.x / gridSize) * gridSize;
@@ -42,15 +49,13 @@ public class Draggable : MonoBehaviour
         transform.position = new Vector3(x, y, 0f);
     }
 
-    // Método para obtener la posición del mouse en coordenadas de mundo
-    private Vector3 GetMouseWorldPosition()
+    public void SetMovementLimits(float newMinX, float newMaxX, float newMinY, float newMaxY)
     {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = -Camera.main.transform.position.z; // Para que se mantenga en 2D
-        return Camera.main.ScreenToWorldPoint(mousePosition);
+        minX = newMinX;
+        maxX = newMaxX;
+        minY = newMinY;
+        maxY = newMaxY;
     }
-
-    // Método para centrar la figura en la pantalla utilizando el Canvas
     public void CenterFigure(Canvas canvas)
     {
         // Obtener la posición central de la cámara en el mundo (centrado en la cámara)
