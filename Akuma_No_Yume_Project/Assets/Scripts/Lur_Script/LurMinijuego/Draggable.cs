@@ -1,77 +1,96 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Draggable : MonoBehaviour
+public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler
 {
-    private Vector3 offset;
+    private RectTransform rectTransform;
+    private Vector2 offset;
     private bool isDragging = false;
-    public float gridSize = 1.0f; // Tamaño de la celda en el grid
-    public RectTransform panelSeleccion; // Panel de selección para verificar
-    public RectTransform panelDestino; // Panel donde se puede arrastrar la figura
+    public float gridSize = 100f; // Tamaño de la celda en el grid
+    public RectTransform panelDestino; // Referencia al PanelDestino en la UI
+    private bool isInPanelDestino = false; // Para saber si está en el PanelDestino
 
 
     // Límites personalizados (ajústalos en el Inspector de Unity)
     public float minX = -5f, maxX = 5f, minY = -3f, maxY = 3f;
-    void Update()
+
+    void Awake()
     {
-        // Solo permitir el arrastre si la figura está en el panelDestino
-        if (panelDestino != null && panelDestino.rect.Contains(panelDestino.InverseTransformPoint(transform.position)))
+        rectTransform = GetComponent<RectTransform>();
+    }
+  
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (!isInPanelDestino) return; // No hacer nada si no está en el PanelDestino
+
+        // 📌 Calcular el offset correctamente antes de arrastrar
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            rectTransform.parent as RectTransform,
+            eventData.position,
+            eventData.pressEventCamera,
+            out offset
+        );
+    }
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (!isDragging) return; // No arrastrar si no está en el PanelDestino
+    }
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (!isDragging) return;
+
+        Vector2 localPointerPosition;
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            panelDestino, // 📌 Asegurar que la posición es relativa a `panelDestino`
+            eventData.position,
+            eventData.pressEventCamera,
+            out localPointerPosition))
         {
-            if (Input.GetMouseButtonDown(0)) // Solo si se hace clic con el ratón
-            {
-                offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                isDragging = true;
-            }
+            // 📌 Ajustar al grid
+            Vector2 newPosition = SnapToGrid(localPointerPosition - offset);
 
-            if (isDragging)
-            {
-                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
-                transform.position = mousePos;
-            }
+            // 📌 Restringir dentro de `panelDestino`
+            newPosition = ClampToBounds(newPosition);
 
-            if (Input.GetMouseButtonUp(0)) // Cuando se suelta el clic
-            {
-                isDragging = false;
-            }
+            rectTransform.anchoredPosition = newPosition;
         }
     }
-    private void OnMouseDown()
+    // 📌 Método para ajustar la posición al grid
+    private Vector2 SnapToGrid(Vector2 position)
     {
-        if (GetComponent<Collider2D>() == null)
-        {
-            Debug.LogError("El objeto no tiene un Collider2D.");
-            return;
-        }
-
-        // Solo activar el arrastre si el objeto está dentro del panelDestino
-        if (panelDestino.rect.Contains(panelDestino.InverseTransformPoint(transform.position)))
-        {
-            offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            isDragging = true;
-        }
+        float snappedX = Mathf.Round(position.x / gridSize) * gridSize;
+        float snappedY = Mathf.Round(position.y / gridSize) * gridSize;
+        return new Vector2(snappedX, snappedY);
     }
-
-    private void OnMouseDrag()
+    // 📌 Método para restringir la figura dentro de `panelDestino`
+    private Vector2 ClampToBounds(Vector2 position)
     {
-        // Asegurarse de que solo se mueva si está en el panelDestino, no en el panelSeleccion
-        if (isDragging && panelDestino.rect.Contains(panelDestino.InverseTransformPoint(transform.position)))
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
-            mousePos.z = 0;
+        Vector2 minBounds = new Vector2(panelDestino.rect.xMin, panelDestino.rect.yMin);
+        Vector2 maxBounds = new Vector2(panelDestino.rect.xMax, panelDestino.rect.yMax);
 
-            // Aplicar los límites definidos por el usuario
-            mousePos.x = Mathf.Clamp(mousePos.x, minX, maxX);
-            mousePos.y = Mathf.Clamp(mousePos.y, minY, maxY);
+        // Restringir dentro de los límites personalizados
+        float clampedX = Mathf.Clamp(position.x, minX, maxX);
+        float clampedY = Mathf.Clamp(position.y, minY, maxY);
 
-            transform.position = mousePos;
-        }
+
+        return new Vector2(clampedX, clampedY);
     }
-
-    private void OnMouseUp()
+    public void OnEndDrag(PointerEventData eventData)
     {
-        isDragging = false;
-        transform.position = new Vector3(
-            Mathf.Clamp(Mathf.Round(transform.position.x / gridSize) * gridSize, minX, maxX),
-            Mathf.Clamp(Mathf.Round(transform.position.y / gridSize) * gridSize, minY, maxY), 0f);
-    }    
+        // Nada especial al soltar, solo asegurarse de que sigue en los límites del Canvas si es necesario
+    }
+    // 📌 Método para mover al `PanelDestino` y activar el arrastre
+    public void MoveToPanel(RectTransform panelDestino)
+    {
+        isDragging = true; // 🔹 Ahora sí se puede arrastrar
+        rectTransform.SetParent(panelDestino, false);
+
+        // 📌 Centrar la figura en `panelDestino`
+        rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+        rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        rectTransform.pivot = new Vector2(0.5f, 0.5f);
+        // Restaurar la posición dentro del panel de selección
+        rectTransform.anchoredPosition = Vector2.zero;
+    } 
 }
