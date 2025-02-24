@@ -17,6 +17,8 @@ public class SelectionManager : MonoBehaviour
     public RectTransform panelDestino; // Panel donde deben centrarse las figuras
 
     private GameObject ultimaFiguraSeleccionada; // Última figura seleccionada
+    private GameObject ultimaFiguraEnDestino; // Última figura seleccionada dentro del panelDestino
+
 
     // ---------- [Botones] ----------
     [Header("Botones de Interacción")]
@@ -39,32 +41,21 @@ public class SelectionManager : MonoBehaviour
 
     [Tooltip("Orden de las capas (sortingOrder) correcto para cada figura.")]
     public int[] sortingOrderCorrectos; // Orden en la capa correcto para cada figura
+    [Header("Límites de Orden en la Capa")]
+    [Tooltip("Valor mínimo permitido para el sortingOrder")]
+    public int minLayer = 1;
+    [Tooltip("Valor máximo permitido para el sortingOrder")]
+    public int maxLayer = 3;
 
     //Variables privadas.
-    // Límites para el sortingOrder
     private int defaultSortingOrder; // Almacenar el valor de sortingOrder original
-    private int minSortingOrder = 1;
-    private int maxSortingOrder = 3;
+
     void Start()
     {
-        // Asegurarse de que el botón de remover esté conectado
-        if (botonRemover != null)
-        {
-            botonRemover.onClick.AddListener(RemoverUltimaFigura);
-        }
-        else
-        {
-            Debug.LogError("Botón Remover no asignado en el inspector.");
-        }
-        // Asignar los botones de subir y bajar capa
-        if (botonSubirCapa != null)
-        {
-            botonSubirCapa.onClick.AddListener(SubirCapaFigura);
-        }
-        if (botonBajarCapa != null)
-        {
-            botonBajarCapa.onClick.AddListener(BajarCapaFigura);
-        }
+        // Configurar botones si están asignados
+        if (botonRemover != null) botonRemover.onClick.AddListener(RemoverUltimaFigura);
+        if (botonSubirCapa != null) botonSubirCapa.onClick.AddListener(SubirCapaFigura);
+        if (botonBajarCapa != null) botonBajarCapa.onClick.AddListener(BajarCapaFigura);
         // Desactivar el texto de completado al inicio
         if (textoCompletado != null)
         {
@@ -84,7 +75,7 @@ public class SelectionManager : MonoBehaviour
     public void SeleccionarFigura(int index)
     {
 
-        if(index < 0 || index >= figuras.Length)
+        if (index < 0 || index >= figuras.Length)
         {
             Debug.LogError("Índice fuera de rango");
             return;
@@ -107,10 +98,14 @@ public class SelectionManager : MonoBehaviour
                 defaultSortingOrder = spriteRenderer.sortingOrder; // Obtener el sortingOrder
             }
         }
-
-        ultimaFiguraSeleccionada = figuraSeleccionada;
+        // 📌 Si la figura ya está en el panelDestino, actualizar la última figura seleccionada en destino
+        if (figuraSeleccionada.transform.parent == panelDestino)
+        {
+            ultimaFiguraEnDestino = figuraSeleccionada;
+        }
+        //ultimaFiguraSeleccionada = figuraSeleccionada;
     }
-    
+
     public void RemoverUltimaFigura()
     {
         if (ultimaFiguraSeleccionada != null)
@@ -125,7 +120,7 @@ public class SelectionManager : MonoBehaviour
             SpriteRenderer spriteRenderer = ultimaFiguraSeleccionada.GetComponent<SpriteRenderer>();
             if (spriteRenderer != null)
             {
-                spriteRenderer.sortingOrder = defaultSortingOrder;
+                spriteRenderer.sortingOrder = minLayer;
             }
 
             // Desactivar Draggable en lugar de eliminarlo
@@ -190,31 +185,36 @@ public class SelectionManager : MonoBehaviour
             Time.timeScale = 0f; // Pausar el juego (al poner el timeScale a 0)
         }
     }
+    // Subir la capa de la última figura seleccionada dentro del panelDestino
     public void SubirCapaFigura()
     {
-        if (ultimaFiguraSeleccionada != null)
+        if (ultimaFiguraEnDestino != null)
         {
-            // Subir la figura en la capa (aumentar el sortingOrder) pero restringido a los límites
-            SpriteRenderer spriteRenderer = ultimaFiguraSeleccionada.GetComponent<SpriteRenderer>();
+            SpriteRenderer spriteRenderer = ultimaFiguraEnDestino.GetComponent<SpriteRenderer>();
             if (spriteRenderer != null)
             {
-                // Aumentar y clamped (limitado entre minSortingOrder y maxSortingOrder)
-                spriteRenderer.sortingOrder = Mathf.Clamp(spriteRenderer.sortingOrder + 1, minSortingOrder, maxSortingOrder);
+                int nuevaCapa = spriteRenderer.sortingOrder + 1;
+                if (nuevaCapa <= maxLayer)
+                {
+                    spriteRenderer.sortingOrder = nuevaCapa;
+                }
             }
         }
     }
 
     public void BajarCapaFigura()
     {
-        if (ultimaFiguraSeleccionada != null)
+        if (ultimaFiguraEnDestino != null)
         {
-            // Bajar la figura en la capa (disminuir el sortingOrder) pero restringido a los límites
-            SpriteRenderer spriteRenderer = ultimaFiguraSeleccionada.GetComponent<SpriteRenderer>();
+            SpriteRenderer spriteRenderer = ultimaFiguraEnDestino.GetComponent<SpriteRenderer>();
             if (spriteRenderer != null)
             {
-                // Disminuir y clamped (limitado entre minSortingOrder y maxSortingOrder)
-                spriteRenderer.sortingOrder = Mathf.Clamp(spriteRenderer.sortingOrder - 1, minSortingOrder, maxSortingOrder);
+                int nuevaCapa = spriteRenderer.sortingOrder - 1;
+                if (nuevaCapa >= minLayer)
+                {
+                    spriteRenderer.sortingOrder = nuevaCapa;
+                }
             }
         }
-    }    
+    }
 }
