@@ -64,6 +64,12 @@ public class Lur_PlayerMovement2D : MonoBehaviour
         {
             jumpsRemaining = maxJumps;
             anim.SetBool("isJumping", false);
+
+            // Reproducir sonido de aterrizaje
+            if (rb.velocity.y < 0) // Solo cuando está cayendo y toca el suelo
+            {
+                PlayGroundSound();
+            }
         }
 
         // Salto
@@ -86,6 +92,29 @@ public class Lur_PlayerMovement2D : MonoBehaviour
     {
         anim.SetTrigger("Healing");
         StartCoroutine(BloquearMovimiento(2f));
+    }
+
+    // Métodos llamados por eventos de animación
+    public void PlayWalkSound()
+    {
+        if (SoundController.Instance != null)
+        {
+            SoundController.Instance.PlaySound("Walk");
+        }
+    }
+    public void PlayJumpSound()
+    {
+        if (SoundController.Instance != null)
+        {
+            SoundController.Instance.PlaySound("Jump");
+        }
+    }
+    public void PlayGroundSound()
+    {
+        if (SoundController.Instance != null)
+        {
+            SoundController.Instance.PlaySound("Ground");
+        }
     }
 
     // Detectar colisión con el objeto "Logro_V1"
