@@ -1702,6 +1702,7 @@ GameObject:
   - component: {fileID: 1127717973}
   - component: {fileID: 1127717974}
   - component: {fileID: 1127717975}
+  - component: {fileID: 1127717977}
   - component: {fileID: 1127717976}
   m_Layer: 5
   m_Name: Figura3
@@ -1800,8 +1801,8 @@ MonoBehaviour:
   maxX: 432
   minY: -324
   maxY: 324
---- !u!61 &1127717976
-BoxCollider2D:
+--- !u!58 &1127717976
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1832,19 +1833,21 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133333}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.00000047683716, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.49999997
+--- !u!114 &1127717977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127717972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248ec66ee9202c34d972971d0c311cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1186710350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,6 +1993,7 @@ GameObject:
   - component: {fileID: 1231068885}
   - component: {fileID: 1231068886}
   - component: {fileID: 1231068887}
+  - component: {fileID: 1231068889}
   - component: {fileID: 1231068888}
   m_Layer: 5
   m_Name: Figura2
@@ -2088,8 +2092,8 @@ MonoBehaviour:
   maxX: 432
   minY: -324
   maxY: 324
---- !u!61 &1231068888
-BoxCollider2D:
+--- !u!58 &1231068888
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2120,19 +2124,21 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.00000023841858, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.49999997
+--- !u!114 &1231068889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231068884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248ec66ee9202c34d972971d0c311cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1353770970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,6 +2578,7 @@ GameObject:
   - component: {fileID: 2128480780}
   - component: {fileID: 2128480781}
   - component: {fileID: 2128480782}
+  - component: {fileID: 2128480783}
   m_Layer: 5
   m_Name: Figura1
   m_TagString: Untagged
@@ -2704,6 +2711,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.000000059604645}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2128480783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128480778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248ec66ee9202c34d972971d0c311cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &10028748228735458
 Transform:
   m_ObjectHideFlags: 0
@@ -2737,6 +2756,7 @@ MonoBehaviour:
   - {fileID: 1127717972}
   panelSeleccion: {fileID: 24444090}
   panelDestino: {fileID: 1749732848}
+  ultimaFiguraEnDestino: {fileID: 0}
   botonRemover: {fileID: 104495873}
   botonSubirCapa: {fileID: 613459784}
   botonBajarCapa: {fileID: 365722402}
@@ -2746,6 +2766,8 @@ MonoBehaviour:
   - {x: -432, y: 216}
   - {x: -216, y: 216}
   sortingOrderCorrectos: 030000000100000001000000
+  minLayer: 1
+  maxLayer: 3
 --- !u!1 &9010556228635216825
 GameObject:
   m_ObjectHideFlags: 0

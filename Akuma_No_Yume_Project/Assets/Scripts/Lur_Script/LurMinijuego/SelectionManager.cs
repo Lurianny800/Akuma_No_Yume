@@ -17,7 +17,7 @@ public class SelectionManager : MonoBehaviour
     public RectTransform panelDestino; // Panel donde deben centrarse las figuras
 
     private GameObject ultimaFiguraSeleccionada; // Última figura seleccionada
-    private GameObject ultimaFiguraEnDestino; // Última figura seleccionada dentro del panelDestino
+    [HideInInspector]public GameObject ultimaFiguraEnDestino; // Última figura seleccionada dentro del panelDestino
 
 
     // ---------- [Botones] ----------
@@ -90,52 +90,47 @@ public class SelectionManager : MonoBehaviour
             if (draggable != null)
             {
                 draggable.MoveToPanel(panelDestino);
-            }
-            // Al seleccionar la figura, almacenamos su sortingOrder original
-            SpriteRenderer spriteRenderer = figuraSeleccionada.GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null)
-            {
-                defaultSortingOrder = spriteRenderer.sortingOrder; // Obtener el sortingOrder
-            }
+            }            
         }
-        // 📌 Si la figura ya está en el panelDestino, actualizar la última figura seleccionada en destino
-        if (figuraSeleccionada.transform.parent == panelDestino)
+        ultimaFiguraSeleccionada = ultimaFiguraEnDestino = figuraSeleccionada;
+        // 📌 Almacenar su sortingOrder original
+        SpriteRenderer spriteRenderer = figuraSeleccionada.GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
         {
-            ultimaFiguraEnDestino = figuraSeleccionada;
+            defaultSortingOrder = spriteRenderer.sortingOrder;
         }
-        //ultimaFiguraSeleccionada = figuraSeleccionada;
     }
 
     public void RemoverUltimaFigura()
     {
-        if (ultimaFiguraSeleccionada != null)
+        if (ultimaFiguraEnDestino != null)
         {
-            // Remover la última figura seleccionada
-            ultimaFiguraSeleccionada.transform.SetParent(panelSeleccion, false);
+            // Remover la última figura en el panelDestino
+            ultimaFiguraEnDestino.transform.SetParent(panelSeleccion, false);
 
             // Restaurar su posición dentro del panel de selección
-            ultimaFiguraSeleccionada.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+            ultimaFiguraEnDestino.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 
             // Restaurar el sortingOrder original usando SpriteRenderer
-            SpriteRenderer spriteRenderer = ultimaFiguraSeleccionada.GetComponent<SpriteRenderer>();
+            SpriteRenderer spriteRenderer = ultimaFiguraEnDestino.GetComponent<SpriteRenderer>();
             if (spriteRenderer != null)
             {
                 spriteRenderer.sortingOrder = minLayer;
             }
 
             // Desactivar Draggable en lugar de eliminarlo
-            Draggable draggable = ultimaFiguraSeleccionada.GetComponent<Draggable>();
+            Draggable draggable = ultimaFiguraEnDestino.GetComponent<Draggable>();
             if (draggable != null)
             {
                 draggable.MoveToPanel(panelSeleccion);
             }
 
-            // Limpiar la referencia de la última figura seleccionada
-            ultimaFiguraSeleccionada = null;
+            // Limpiar la referencia de la última figura en destino
+            ultimaFiguraEnDestino = null;
         }
         else
         {
-            Debug.LogWarning("No hay figura para remover.");
+            Debug.LogWarning("No hay figura en el panel destino para remover.");
         }
     }
     // Método para verificar si todas las figuras están correctamente colocadas
@@ -194,10 +189,9 @@ public class SelectionManager : MonoBehaviour
             if (spriteRenderer != null)
             {
                 int nuevaCapa = spriteRenderer.sortingOrder + 1;
-                if (nuevaCapa <= maxLayer)
-                {
-                    spriteRenderer.sortingOrder = nuevaCapa;
-                }
+                nuevaCapa = Mathf.Clamp(nuevaCapa, minLayer, maxLayer); // Asegurar que no pase el límite
+                spriteRenderer.sortingOrder = nuevaCapa;
+                Debug.Log("Sorting Order Inicial: " + spriteRenderer.sortingOrder);
             }
         }
     }
@@ -210,10 +204,9 @@ public class SelectionManager : MonoBehaviour
             if (spriteRenderer != null)
             {
                 int nuevaCapa = spriteRenderer.sortingOrder - 1;
-                if (nuevaCapa >= minLayer)
-                {
-                    spriteRenderer.sortingOrder = nuevaCapa;
-                }
+                nuevaCapa = Mathf.Clamp(nuevaCapa, minLayer, maxLayer); // Asegurar que no baje del límite
+                spriteRenderer.sortingOrder = nuevaCapa;
+                Debug.Log("Sorting Order Inicial: " + spriteRenderer.sortingOrder);
             }
         }
     }
