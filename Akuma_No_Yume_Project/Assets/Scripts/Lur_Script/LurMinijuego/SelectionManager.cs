@@ -43,12 +43,14 @@ public class SelectionManager : MonoBehaviour
     public int[] sortingOrderCorrectos; // Orden en la capa correcto para cada figura
     [Header("Límites de Orden en la Capa")]
     [Tooltip("Valor mínimo permitido para el sortingOrder")]
-    public int minLayer = 1;
+    public int minLayer = 0;
     [Tooltip("Valor máximo permitido para el sortingOrder")]
     public int maxLayer = 3;
 
     //Variables privadas.
     private int defaultSortingOrder; // Almacenar el valor de sortingOrder original
+    private bool puedeCambiarCapa = true;
+    private float tiempoEspera = 0.1f; // 100ms de espera
 
     void Start()
     {
@@ -183,31 +185,46 @@ public class SelectionManager : MonoBehaviour
     // Subir la capa de la última figura seleccionada dentro del panelDestino
     public void SubirCapaFigura()
     {
-        if (ultimaFiguraEnDestino != null)
+        if (puedeCambiarCapa && ultimaFiguraEnDestino != null)
         {
             SpriteRenderer spriteRenderer = ultimaFiguraEnDestino.GetComponent<SpriteRenderer>();
             if (spriteRenderer != null)
             {
                 int nuevaCapa = spriteRenderer.sortingOrder + 1;
-                nuevaCapa = Mathf.Clamp(nuevaCapa, minLayer, maxLayer); // Asegurar que no pase el límite
-                spriteRenderer.sortingOrder = nuevaCapa;
-                Debug.Log("Sorting Order Inicial: " + spriteRenderer.sortingOrder);
+
+                if (nuevaCapa <= maxLayer)
+                {
+                    spriteRenderer.sortingOrder = nuevaCapa;
+                    Debug.Log($"Subiendo capa: {spriteRenderer.sortingOrder}");
+                }
             }
+            StartCoroutine(EsperarCambioDeCapa());
         }
     }
 
     public void BajarCapaFigura()
     {
-        if (ultimaFiguraEnDestino != null)
+        if (puedeCambiarCapa && ultimaFiguraEnDestino != null)
         {
             SpriteRenderer spriteRenderer = ultimaFiguraEnDestino.GetComponent<SpriteRenderer>();
             if (spriteRenderer != null)
             {
                 int nuevaCapa = spriteRenderer.sortingOrder - 1;
-                nuevaCapa = Mathf.Clamp(nuevaCapa, minLayer, maxLayer); // Asegurar que no baje del límite
-                spriteRenderer.sortingOrder = nuevaCapa;
-                Debug.Log("Sorting Order Inicial: " + spriteRenderer.sortingOrder);
+
+                if (nuevaCapa >= minLayer)
+                {
+                    spriteRenderer.sortingOrder = nuevaCapa;
+                    Debug.Log($"Bajando capa: {spriteRenderer.sortingOrder}");
+                }
             }
+            StartCoroutine(EsperarCambioDeCapa());
         }
+    }
+
+    private IEnumerator EsperarCambioDeCapa()
+    {
+        puedeCambiarCapa = false;
+        yield return new WaitForSeconds(tiempoEspera);
+        puedeCambiarCapa = true;
     }
 }
