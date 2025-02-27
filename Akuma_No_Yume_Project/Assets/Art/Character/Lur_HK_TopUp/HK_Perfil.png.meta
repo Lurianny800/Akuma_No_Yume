@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8177c289266017c4e87934ce3420fdf5
+guid: 431b5c8a3b892b9419a10de1276bc2c8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,10 +45,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 270
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gema_0
+      name: HK_Perfil_0
       rect:
         serializedVersion: 2
-        x: 65
-        y: 0
-        width: 300
-        height: 400
+        x: 52
+        y: 39
+        width: 273
+        height: 325
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69523d4c4d8a03e40aa76012f7058712
-      internalID: -485644155
+      spriteID: c2cc6eaa89a13514890f7b9ccefd27a1
+      internalID: -734633040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gema_1
+      name: HK_Perfil_1
       rect:
         serializedVersion: 2
-        x: 466
-        y: 0
-        width: 300
-        height: 400
+        x: 468
+        y: 52
+        width: 273
+        height: 325
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeb830d22da23c449aa4838c9c84433c
-      internalID: -1749866512
+      spriteID: c89b7c69b1d763c46a3682e7145ff224
+      internalID: 1295605400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gema_2
+      name: HK_Perfil_2
       rect:
         serializedVersion: 2
-        x: 867
-        y: 0
-        width: 300
-        height: 400
+        x: 884
+        y: 39
+        width: 273
+        height: 325
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cd806e0163a543408889911d6ca4ab6
-      internalID: 1815694363
+      spriteID: 32fc62ed4dc52a643a63a59516df78b4
+      internalID: -2130218715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gema_3
+      name: HK_Perfil_3
       rect:
         serializedVersion: 2
-        x: 1268
-        y: 0
-        width: 300
-        height: 400
+        x: 1300
+        y: 52
+        width: 273
+        height: 325
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,71 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deba0066f17bf964eb92ec8fe02ccce9
-      internalID: -170281042
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gema_4
-      rect:
-        serializedVersion: 2
-        x: 1669
-        y: 0
-        width: 300
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcd7c2d43965b4a4997076f3b9ad45e9
-      internalID: -271589206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gema_5
-      rect:
-        serializedVersion: 2
-        x: 2070
-        y: 0
-        width: 300
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8ef8286f80673ed4d81df33905750b9d
-      internalID: 24968249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gema_6
-      rect:
-        serializedVersion: 2
-        x: 2471
-        y: 0
-        width: 300
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: acd629fa0aa0cb74b924f5d911768610
-      internalID: -1666140164
+      spriteID: e35ba018954888e43bde985d5a59a399
+      internalID: -721899803
       vertices: []
       indices: 
       edges: []
@@ -254,13 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gema_0: -485644155
-      Gema_1: -1749866512
-      Gema_2: 1815694363
-      Gema_3: -170281042
-      Gema_4: -271589206
-      Gema_5: 24968249
-      Gema_6: -1666140164
+      HK_Perfil_0: -734633040
+      HK_Perfil_1: 1295605400
+      HK_Perfil_2: -2130218715
+      HK_Perfil_3: -721899803
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
