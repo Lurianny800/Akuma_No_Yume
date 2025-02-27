@@ -100,9 +100,9 @@ TextureImporter:
       name: Gema_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 65
         y: 0
-        width: 400
+        width: 300
         height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -121,9 +121,9 @@ TextureImporter:
       name: Gema_1
       rect:
         serializedVersion: 2
-        x: 400
+        x: 466
         y: 0
-        width: 400
+        width: 300
         height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -142,9 +142,9 @@ TextureImporter:
       name: Gema_2
       rect:
         serializedVersion: 2
-        x: 800
+        x: 867
         y: 0
-        width: 400
+        width: 300
         height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -163,9 +163,9 @@ TextureImporter:
       name: Gema_3
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 1268
         y: 0
-        width: 400
+        width: 300
         height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -184,9 +184,9 @@ TextureImporter:
       name: Gema_4
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 1669
         y: 0
-        width: 400
+        width: 300
         height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -205,9 +205,9 @@ TextureImporter:
       name: Gema_5
       rect:
         serializedVersion: 2
-        x: 2000
+        x: 2070
         y: 0
-        width: 400
+        width: 300
         height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,9 +226,9 @@ TextureImporter:
       name: Gema_6
       rect:
         serializedVersion: 2
-        x: 2400
+        x: 2471
         y: 0
-        width: 400
+        width: 300
         height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
