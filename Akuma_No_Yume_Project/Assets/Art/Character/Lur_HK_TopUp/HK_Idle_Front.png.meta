@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9794e7de480de614c9b6845be1b31de2
+guid: 1df2de8354d895245b1c6e08227ebf69
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,11 +97,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HK_Back_0
+      name: HK_Idle_Front_0
       rect:
         serializedVersion: 2
         x: 52
-        y: 52
+        y: 65
         width: 299
         height: 312
       alignment: 0
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56e1991439e032a4d856d922ae44b262
-      internalID: 5456433
+      spriteID: 817fda934b794c44eb30e50f806bf652
+      internalID: 2096418866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HK_Back_1
+      name: HK_Idle_Front_1
       rect:
         serializedVersion: 2
         x: 468
         y: 65
         width: 299
-        height: 312
+        height: 299
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,38 +132,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 910976f9f374c65419b3d213aaacefa5
-      internalID: 2100232173
+      spriteID: 2e08b1df457983447a657c7846d99553
+      internalID: -1989473575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HK_Back_2
+      name: HK_Idle_Front_2
       rect:
         serializedVersion: 2
         x: 884
-        y: 52
-        width: 299
-        height: 312
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61785db93d91f8f48817a125b5e4bae6
-      internalID: 269383734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HK_Back_3
-      rect:
-        serializedVersion: 2
-        x: 1300
         y: 65
         width: 299
         height: 312
@@ -174,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3d612255fb672d43a3f64de92635984
-      internalID: 1077080544
+      spriteID: 2d28118e82f7e2f48a46b0b77732936e
+      internalID: 78763517
       vertices: []
       indices: 
       edges: []
@@ -191,10 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HK_Back_0: 5456433
-      HK_Back_1: 2100232173
-      HK_Back_2: 269383734
-      HK_Back_3: 1077080544
+      HK_Idle_Front_0: 2096418866
+      HK_Idle_Front_1: -1989473575
+      HK_Idle_Front_2: 78763517
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
