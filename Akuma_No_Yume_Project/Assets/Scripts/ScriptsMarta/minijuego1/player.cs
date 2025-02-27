@@ -27,6 +27,8 @@ public class player : MonoBehaviour
     private buttons panelGameOver;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    [SerializeField] private Vector2 minBounds; // Límites inferiores (x, y)
+    [SerializeField] private Vector2 maxBounds; // Límites superiores (x, y)
 
 
     private void Start()
@@ -84,6 +86,10 @@ public class player : MonoBehaviour
                 targetPosition.x += input.x;
                 targetPosition.y += input.y;
 
+                // Limitar el movimiento dentro de los bounds
+                targetPosition.x = Mathf.Clamp(targetPosition.x, minBounds.x, maxBounds.x);
+                targetPosition.y = Mathf.Clamp(targetPosition.y, minBounds.y, maxBounds.y);
+
                 StartCoroutine(Move(targetPosition));
             }
 
@@ -113,6 +119,7 @@ public class player : MonoBehaviour
     IEnumerator Move(Vector3 targetPosition)
     {
         moving = true;
+
         while ((targetPosition - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
