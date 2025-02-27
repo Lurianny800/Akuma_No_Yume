@@ -560,6 +560,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8903534526223721061, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d3b7bc5f12346243815d0beacd28af0, type: 2}
+    - target: {fileID: 8903534526223721061, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2648101757417080186, guid: 9d3b7bc5f12346243815d0beacd28af0, type: 2}
+    - target: {fileID: 8903534526223721061, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39618,6 +39630,126 @@ PrefabInstance:
       propertyPath: characterImage
       value: 
       objectReference: {fileID: 85899853}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].minigameKey
+      value: Pesadilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[0].text
+      value: "\xBFEh? Este pasillo\u2026 Todo aqu\xED fuera es muy extra\xF1o, mi
+        casa no es as\xED\u2026 E-Esto no me gusta, mejor me quedo en mi habitaci\xF3n,
+        todo era normal ah\xED."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[1].text
+      value: "\xBFEh? \xBF\xBFEh?? La puerta\u2026 No se abre\u2026 \xA1Pero si acabo
+        de salir de ah\xED! \xBFQu\xE9 hago ahora...?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[2].text
+      value: "Siempre igual, Hikari. Paralizada por el miedo cada vez que te tienes
+        que enfrentar a la m\xE1s m\xEDnima dificultad."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[3].text
+      value: "Q-qu\xE9\u2026 \xBFQu\xE9 est\xE1 ocurriendo? \xBFQui\xE9n eres? \xBFPor
+        qu\xE9 est\xE1 todo tan extra\xF1o?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[4].text
+      value: "Puedes llamarme Rei. En pocas palabras, yo soy t\xFA. Soy la parte
+        de t\xED misma que llevas a\xF1os reprimiendo, la parte que siempre tratas
+        de ignorar para mantener tu fachada de chica perfecta y feliz."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[5].text
+      value: "Pero ambas sabemos que no es m\xE1s que eso, una triste fachada que
+        cada d\xEDa se desmorona m\xE1s y m\xE1s."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[6].text
+      value: "Y-yo\u2026 \xBFqu\xE9..? *sniff*"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[7].text
+      value: "Tus lloriqueos no solucionan nada, Hikari. Cuando tienes que afrontar
+        una situaci\xF3n dif\xEDcil, siempre te paralizas y solo lloras hasta que
+        el problema desaparece. Pero esta vez no ser\xE1 as\xED."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[8].text
+      value: "\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[9].text
+      value: "Esc\xFAchame bien, te voy a explicar la situaci\xF3n. Estamos en un
+        mundo establecido en tus sue\xF1os. Te he tra\xEDdo aqu\xED porque estamos
+        al l\xEDmite, Hikari."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[10].text
+      value: "Mi deber es ayudarte a cargar con aquello que t\xFA no puedas soportar
+        por t\xED misma hasta que encuentres la fuerza para enfrentarte de nuevo
+        a ello. Pero t\xFA nunca lo hiciste."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[11].text
+      value: "Con el paso del tiempo, reprimiste m\xE1s y m\xE1s de tus recuerdos,
+        y fui yo quien tuvo que soportarlos, por tu bien. Pero yo solo soy una soluci\xF3n
+        temporal, \xBFsabes?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[12].text
+      value: "Cuando alcance mi l\xEDmite, desaparecer\xE9\u2026 Y todo lo que has
+        estado evitando regresar\xE1 a ti de golpe. Ese ser\xEDa tu fin, \xBFentiendes?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[13].text
+      value: "No podr\xE1s soportar recuperar todos tus recuerdos y sentimientos
+        reprimidos de una manera tan brusca y ca\xF3tica."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[14].text
+      value: "Por eso te he tra\xEDdo aqu\xED. Enfrentar\xE1s los recuerdos que has
+        ocultado hasta ahora para mantener tu felicidad falsa. No permitir\xE9 que
+        sigas huyendo de tus propios sentimientos, Hikari."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[15].text
+      value: "No ser\xE1s capaz de volver a tu habitaci\xF3n hasta que yo decida
+        dejarte salir."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[16].text
+      value: "La oscuridad de este sue\xF1o te devorar\xE1 si te quedas aqu\xED parada,
+        as\xED que deja de llorar y sal de este pasillo de una vez."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[17].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[18].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[19].text
+      value: "Yo\u2026Tengo mucho miedo\u2026 Todo es tan surreal, pero\u2026 si
+        lo que ha dicho es cierto, no  quiero desaparecer\u2026 Tengo que salir de
+        aqu\xED. "
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

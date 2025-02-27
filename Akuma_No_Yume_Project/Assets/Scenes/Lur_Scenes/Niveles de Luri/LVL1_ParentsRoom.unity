@@ -956,6 +956,146 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276675241}
   m_CullTransparentMesh: 1
+--- !u!1001 &561706164
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 667483134296984404, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 26485677}
+    - target: {fileID: 6050522476044705692, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_Name
+      value: Canvas_Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061451271785708598, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903534526223721061, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d3b7bc5f12346243815d0beacd28af0, type: 2}
+    - target: {fileID: 8903534526223721061, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2648101757417080186, guid: 9d3b7bc5f12346243815d0beacd28af0, type: 2}
+    - target: {fileID: 8903534526223721061, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+--- !u!1 &561706165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5497413060171588422, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+  m_PrefabInstance: {fileID: 561706164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &561706166 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8903534526223721061, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+  m_PrefabInstance: {fileID: 561706164}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &561706167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7645172365259690871, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+  m_PrefabInstance: {fileID: 561706164}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568847780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,7 +1444,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 2117703833}
-  mapPanel: {fileID: 1755435311}
 --- !u!4 &645803968
 Transform:
   m_ObjectHideFlags: 0
@@ -10432,6 +10571,169 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364376033}
   m_CullTransparentMesh: 1
+--- !u!1001 &1459175080
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 444600579048859941, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.2888536
+      objectReference: {fileID: 0}
+    - target: {fileID: 444600579048859941, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1049135
+      objectReference: {fileID: 0}
+    - target: {fileID: 444600579048859941, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.7074752
+      objectReference: {fileID: 0}
+    - target: {fileID: 444600579048859941, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 444600579048859941, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444600579048859941, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444600579048859941, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444600579048859941, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444600579048859941, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444600579048859941, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318086091415938592, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: m_Name
+      value: DialogueSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 561706165}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 561706166}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: characterImage
+      value: 
+      objectReference: {fileID: 561706167}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].minigameKey
+      value: "Mam\xE1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[0].text
+      value: "Ah, otro fragmento\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[1].text
+      value: "Veo muchas im\xE1genes de pap\xE1 con... \xBFmam\xE1?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[2].text
+      value: "As\xED es, Hikari. Esa es tu madre. No la recuerdas, \xBFverdad?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[3].text
+      value: "No\u2026 Nunca llegu\xE9 a conocerla. Ella\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[4].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[5].text
+      value: "No es f\xE1cil, pero debes afrontarlo. Ya sabes lo que pasar\xE1 si
+        sigues evitando la verdad."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[6].text
+      value: "Mam\xE1... Ella muri\xF3 cuando yo nac\xED. Cuando era ni\xF1a siempre
+        me preguntaba c\xF3mo ser\xEDa recibir el amor de una madre, pero por mi
+        culpa nunca pude saberlo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[7].text
+      value: "Lo \xFAnico que conoc\xED de ella fueron las fotos que pap\xE1 ten\xEDa
+        con ella. Parec\xEDan muy felices juntos\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[8].text
+      value: "No fue tu culpa, \xBFsabes? No fue algo que pudieras controlar."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[9].text
+      value: "Pero si no fuera por m\xED, ella seguir\xEDa aqu\xED\u2026 Y pap\xE1
+        no se habr\xEDa vuelto tan fr\xEDo\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[10].text
+      value: "Pap\xE1 nunca fue capaz de olvidar a mam\xE1, y tampoco pudo perdonarme
+        por lo que hice."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[11].text
+      value: "Ella muri\xF3 por mi culpa, cada vez que pap\xE1 me ve, es como un
+        recordatorio de lo que ha perdido."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[12].text
+      value: "T\xFA no decidiste que eso ocurriera; en cambio, \xE9l s\xED tom\xF3
+        una decisi\xF3n."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[13].text
+      value: "Pudo haberte visto como lo \xFAltimo que su esposa dej\xF3 atr\xE1s,
+        pudo haberte amado y protegido."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[14].text
+      value: "El hecho de que \xE9l decidiera culparte y guardar resentimiento hacia
+        ti no es tu culpa. \xC9l era un adulto, y t\xFA no eras m\xE1s que una ni\xF1a."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[15].text
+      value: "Yo\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[16].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[17].text
+      value: "Bueno, creo que es suficiente por ahora. \xBFLista para seguir?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[18].text
+      value: "...S\xED."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 36788b0582f778546936995c26a50b6a, type: 3}
 --- !u!1 &1535582326
 GameObject:
   m_ObjectHideFlags: 0
@@ -17111,3 +17413,5 @@ SceneRoots:
   - {fileID: 1123279828}
   - {fileID: 2093600286}
   - {fileID: 952413394}
+  - {fileID: 561706164}
+  - {fileID: 1459175080}

@@ -237,12 +237,219 @@ PrefabInstance:
       value: DialogueSystem
       objectReference: {fileID: 0}
     - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 139067709}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 139067710}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: characterImage
+      value: 
+      objectReference: {fileID: 139067711}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
       propertyPath: dialogues.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].minigameKey
+      value: Hikikomori
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].minigameKey
+      value: "Pap\xE1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
       propertyPath: dialogues.Array.data[1].dialogueLines.Array.size
-      value: 2
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[0].text
+      value: "\xBFQu\xE9 es esto..? Es muy bonito, brilla mucho\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[1].text
+      value: Vaya, lo encontraste. Bien hecho.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[2].text
+      value: "\xA1\xA1Ah!! \xBF\xBFOtra vez t\xFA?? \xBFQu\xE9 haces aqu\xED? \xBF\xBFY
+        qu\xE9 es este cristal??"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[3].text
+      value: "Haces demasiadas preguntas. C\xE1lmate y d\xE9jame hablar, precisamente
+        hab\xEDa venido para explic\xE1rtelo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[4].text
+      value: "Ah... Lo siento\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[5].text
+      value: "Lo que tienes ah\xED es un fragmento de tus recuerdos. M\xEDralo bien,
+        f\xEDjate en sus reflejos. \xBFLo ves?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[6].text
+      value: "Es... \xA1Mi casa! \xA1La misma de siempre! Veo el pasillo que lleva
+        a mi habitaci\xF3n\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[7].text
+      value: "Lo que he visto hasta ahora en este sue\xF1o se parece un poco, reconozco
+        la decoraci\xF3n, como las l\xE1mparas, y las espinas me recuerdan a una
+        planta que sol\xEDamos tener\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[8].text
+      value: "Pero... \xBFPor qu\xE9 ha cambiado tanto? Aqu\xED es tan grande y largo,
+        parece interminable\u2026 Si el resto de la casa tambi\xE9n es as\xED, siento
+        que nunca voy a poder salir..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[9].text
+      value: "Bueno, tiene sentido, \xBFno? Intenta recordar, \xBFhace cu\xE1nto
+        que esta casa es lo \xFAnico que conoces?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[0].text
+      value: "Oh, \xA1otro recuerdo!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[1].text
+      value: "En este puedo ver la cocina... Est\xE1 tan limpia y organizada como
+        siempre. Pap\xE1 siempre me insisti\xF3 mucho en mantener toda la casa bien
+        ordenada."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[2].text
+      value: "Tu padre, hm? Di, Hikari, \xBFqu\xE9 me puedes decir sobre \xE9l?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[3].text
+      value: "Bueno... Es alguien muy serio. \xC9l no pasa mucho tiempo en casa,
+        siempre est\xE1 trabajando y rara vez viene para dormir siquiera, por lo
+        que la limpieza siempre ha sido mi responsabilidad."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[4].text
+      value: "Le gusta que todo est\xE9 en orden, que todo sea... perfecto. Cuando
+        era ni\xF1a, se molestaba mucho si jugaba por la casa, siempre dec\xEDa que
+        terminar\xEDa dej\xE1ndolo todo hecho un desastre."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[5].text
+      value: "Aunque, en realidad, nunca mostraba su enfado. De hecho, casi nunca
+        mostraba ninguna emoci\xF3n."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[6].text
+      value: "\xC9l me dijo que dejar que las emociones te controlen es signo de
+        debilidad, que uno siempre debe mantener la compostura sin importar lo que
+        sienta."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[7].text
+      value: "Bueno, ya ves a d\xF3nde te han llevado sus ense\xF1anzas, \xBFno?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[8].text
+      value: "\xBFQu\xE9 quieres decir?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[9].text
+      value: "Estamos aqu\xED porque siempre te niegas a permitirte sentir. En lugar
+        de enfrentar tus emociones, las reprimes. Parece que ahora sabemos de d\xF3nde
+        viene esa costumbre, \xBFVerdad?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[10].text
+      value: "\xBFQu\xE9 quieres decir?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[11].text
+      value: "Pi\xE9nsalo bien. \xBFHace cuanto tiempo que no sales de tu casa? Casi
+        no sales de tu habitaci\xF3n, de hecho. Hace a\xF1os que no sales de tu casa,
+        por eso ha adoptado esta forma en el sue\xF1o."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[12].text
+      value: "Es tan inmensa y desordenada que no puedes encontrar la salida, como
+        en un laberinto. Aunque en tu caso no es tanto que no puedas encontrarla,
+        sino que no quieres. \xBFMe equivoco?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[13].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[14].text
+      value: "Ya veo... As\xED es. Hace a\xF1os decid\xED que no pod\xEDa afrontar
+        m\xE1s el mundo exterior, y que quedarme siempre en casa ser\xEDa lo m\xE1s
+        sencillo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[15].text
+      value: Yo... No he vuelto a salir desde entonces. Siempre que necesito algo
+        lo encargo para que me lo traigan a casa.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[16].text
+      value: "Normalmente lo har\xEDa pap\xE1, pero \xFAltimamente trabaja mucho
+        y no puede hacerlo \xE9l mismo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[17].text
+      value: "Bien, lo recuerdas. \xBFY qu\xE9 vas a hacer ahora? \xBFPiensas seguir
+        atrapada en este lugar?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[18].text
+      value: No, yo... Quiero encontrar la salida.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogueLines.Array.data[19].text
+      value: "Bien. Entonces, sigue adelante y sal de aqu\xED."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[10].text
+      value: "Ah\u2026 Bueno\u2026 Supongo que tienes raz\xF3n. Siempre quise ser
+        la hija perfecta, hacer todo bien para que pap\xE1 estuviera orgulloso de
+        m\xED\u2026 As\xED que segu\xED al pie de la letra lo que me dec\xEDa."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[11].text
+      value: "Reprimir tus sentimientos de esta manera solo te hace da\xF1o. Cuanto
+        m\xE1s lo hagas, m\xE1s dif\xEDcil se hace enfrentarte a ellos al final."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[12].text
+      value: "En tu caso, se volvi\xF3 tan dif\xEDcil que me he visto obligada a
+        ayudarte a afrontarlos. Pero ahora entiendes que no puedes seguir as\xED,
+        \xBFno?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[13].text
+      value: "S\xED\u2026 no quiero volver a estar en otra situaci\xF3n como esta
+        por mi culpa."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[14].text
+      value: Bien. Sigamos entonces.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[15].text
+      value: Bien. Sigamos entonces.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369875016067954009, guid: 36788b0582f778546936995c26a50b6a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogueLines.Array.data[16].text
+      value: "...S\xED."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3323,11 +3530,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8903534526223721061, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d3b7bc5f12346243815d0beacd28af0, type: 2}
+    - target: {fileID: 8903534526223721061, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2648101757417080186, guid: 9d3b7bc5f12346243815d0beacd28af0, type: 2}
+    - target: {fileID: 8903534526223721061, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+--- !u!1 &139067709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5497413060171588422, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+  m_PrefabInstance: {fileID: 139067708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &139067710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8903534526223721061, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+  m_PrefabInstance: {fileID: 139067708}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &139067711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7645172365259690871, guid: 73e2b625c66bfa84084dacce1136f486, type: 3}
+  m_PrefabInstance: {fileID: 139067708}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &142354783
 GameObject:
   m_ObjectHideFlags: 0
