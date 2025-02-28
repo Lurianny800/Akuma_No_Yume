@@ -10,23 +10,20 @@ public class ButtonSceneChanger : MonoBehaviour
 
     public void ChangeScene()
     {
-        // Buscar al objeto con el tag "Player"
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        // Guardar el nombre de la escena actual antes de cambiar
+        PlayerPrefs.SetString("PreviousScene", SceneManager.GetActiveScene().name);
 
-        if (player != null)
+        // Guardar la nueva posición SOLO si estamos cambiando de Scena B a Scena A
+        if (sceneToLoad == "LVL_0" && SceneManager.GetActiveScene().name == "game1")
         {
-            // Guardar la nueva posición del Player
             PlayerPrefs.SetFloat("PlayerX", newPosition.x);
             PlayerPrefs.SetFloat("PlayerY", newPosition.y);
-            PlayerPrefs.Save(); // Guardar los datos en memoria
+        }
 
-            // Cambiar de escena
-            SceneManager.LoadScene(sceneToLoad);
-            Time.timeScale = 1.0f;
-        }
-        else
-        {
-            Debug.LogWarning("No se encontró un objeto con el tag 'Player'.");
-        }
+        PlayerPrefs.Save(); // Guardar los datos
+
+        // Cambiar de escena
+        SceneManager.LoadScene(sceneToLoad);
+        Time.timeScale = 1.0f;
     }
 }

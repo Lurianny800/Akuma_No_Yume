@@ -5,56 +5,47 @@ using UnityEngine.SceneManagement;
 
 public class Door_SceneChanger_Lur : MonoBehaviour
 {
-    public string sceneToLoad; // Nombre de la escena que quieres cargar
-    public Transform exitPoint; // Punto donde el jugador aparecerá en la nueva escena
-    private bool playerIsNearby = false;
+    public string sceneToLoad; // Nombre de la escena a cargar
+    public Vector2 newPlayerPosition; // Nueva posición del jugador después del cambio de escena
+    public bool changePlayerPosition; // Si es true, cambia la posición del jugador
 
-    private static string lastDoorUsed; // Guarda el nombre de la última puerta usada
+    private bool isPlayerInDoor = false; // Verifica si el jugador está en contacto
 
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        // Verificar si el objeto que entra en el trigger es el jugador
-        if (other.CompareTag("Player"))
-        {
-            playerIsNearby = true;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        // Verificar si el jugador ha salido del trigger
-        if (other.CompareTag("Player"))
-        {
-            playerIsNearby = false;
-        }
-    }
     private void Update()
     {
-        // Si el jugador está cerca y presiona la tecla X
-        if (playerIsNearby && Input.GetKeyDown(KeyCode.X))
+        if (isPlayerInDoor && Input.GetKeyDown(KeyCode.X)) // Si el jugador está en la puerta y presiona X
         {
-            lastDoorUsed = gameObject.name; // Guarda la última puerta usada            
-            SceneManager.LoadScene(sceneToLoad); // Cambiar a la escena especificada
+            SceneManager.sceneLoaded += OnSceneLoaded; // Suscribirse al evento de carga
+            SceneManager.LoadScene(sceneToLoad); // Cargar la escena
         }
     }
-    private void Start()
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        GameObject mainCamera = Camera.main.gameObject; // Encuentra la cámara principal
-
-        // Si el jugador viene de otra puerta, lo posicionamos en la correcta
-        if (lastDoorUsed == gameObject.name)
+        if (collision.CompareTag("Player")) // Detectar si el objeto en colisión es el jugador
         {
-            if (player != null && exitPoint != null)
-            {
-                player.transform.position = exitPoint.position;
-            }
+            isPlayerInDoor = true; // Activar la detección
+        }
+    }
 
-            // Mover la cámara a la nueva posición del jugador
-            if (mainCamera != null)
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player")) // Detectar cuando el jugador sale
+        {
+            isPlayerInDoor = false; // Desactivar la detección
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (changePlayerPosition)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
             {
-                mainCamera.transform.position = new Vector3(exitPoint.position.x, exitPoint.position.y, mainCamera.transform.position.z);
+                player.transform.position = newPlayerPosition;
             }
         }
+        SceneManager.sceneLoaded -= OnSceneLoaded; // Desuscribirse del evento
     }
 }

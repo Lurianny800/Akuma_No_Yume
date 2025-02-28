@@ -8,11 +8,16 @@ public class PlayerPositionLoader : MonoBehaviour
     {
         if (gameObject.CompareTag("Player")) // Solo afecta al objeto con el tag "Player"
         {
-            if (PlayerPrefs.HasKey("PlayerX") && PlayerPrefs.HasKey("PlayerY"))
+            string previousScene = PlayerPrefs.GetString("PreviousScene", ""); // Obtener la escena anterior
+
+            if (previousScene == "game1") // Solo mover si vienes de Scena B
             {
-                float x = PlayerPrefs.GetFloat("PlayerX");
-                float y = PlayerPrefs.GetFloat("PlayerY");
-                transform.position = new Vector2(x, y);
+                if (PlayerPrefs.HasKey("PlayerX") && PlayerPrefs.HasKey("PlayerY"))
+                {
+                    float x = PlayerPrefs.GetFloat("PlayerX");
+                    float y = PlayerPrefs.GetFloat("PlayerY");
+                    transform.position = new Vector2(x, y);
+                }
             }
         }
     }
