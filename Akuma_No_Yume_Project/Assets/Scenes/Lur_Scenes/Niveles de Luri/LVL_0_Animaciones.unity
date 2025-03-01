@@ -3130,6 +3130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PanelBrillo
       objectReference: {fileID: 0}
+    - target: {fileID: 1193658450396674191, guid: 1cf59b8fed409af42a009aa369f3aa68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1347336901930595363, guid: 1cf59b8fed409af42a009aa369f3aa68, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5006507
@@ -36432,7 +36436,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: game1
-  exitPoint: {fileID: 0}
+  newPlayerPosition: {x: 0, y: 0}
+  changePlayerPosition: 0
 --- !u!61 &1203355066
 BoxCollider2D:
   m_ObjectHideFlags: 0
