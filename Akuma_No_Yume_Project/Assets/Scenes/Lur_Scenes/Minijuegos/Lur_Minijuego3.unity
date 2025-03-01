@@ -837,7 +837,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4806077608782675376}
         m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
-        m_MethodName: RemoverUltimaFigura
+        m_MethodName: BajarCapaFigura
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1122,7 +1122,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4806077608782675376}
         m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
-        m_MethodName: RemoverUltimaFigura
+        m_MethodName: SubirCapaFigura
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
