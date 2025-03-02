@@ -34,7 +34,7 @@ public class SelectionManager : MonoBehaviour
     // ---------- [Configuración de Victoria] ----------
     [Header("Condiciones de Victoria")]
     [Tooltip("Texto que aparecerá cuando el jugador complete el minijuego.")]
-    public TextMeshProUGUI textoCompletado; // Texto de completado usando TMP
+    public GameObject Panel_Fin;
 
     [Tooltip("Posiciones correctas para cada figura, en el orden de selección.")]
     public Vector2[] posicionesCorrectas; // Posiciones correctas para cada figura
@@ -59,9 +59,9 @@ public class SelectionManager : MonoBehaviour
         if (botonSubirCapa != null) botonSubirCapa.onClick.AddListener(SubirCapaFigura);
         if (botonBajarCapa != null) botonBajarCapa.onClick.AddListener(BajarCapaFigura);
         // Desactivar el texto de completado al inicio
-        if (textoCompletado != null)
+        if (Panel_Fin != null)
         {
-            textoCompletado.gameObject.SetActive(false);
+            Panel_Fin.gameObject.SetActive(false);
         }
     }
     void Update()
@@ -176,9 +176,9 @@ public class SelectionManager : MonoBehaviour
     // Mostrar el mensaje de "Completado" y pausar el juego
     private void MostrarCompletado()
     {
-        if (textoCompletado != null)
+        if (Panel_Fin != null)
         {
-            textoCompletado.gameObject.SetActive(true); // Activar el texto de "Completado"
+            Panel_Fin.gameObject.SetActive(true); // Activar el texto de "Completado"
             Time.timeScale = 0f; // Pausar el juego (al poner el timeScale a 0)
         }
     }
