@@ -1773,26 +1773,38 @@ PrefabInstance:
     - target: {fileID: 1461019609374701000, guid: 3042b975389f58449a4df42b043fb840, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1410562270}
+      objectReference: {fileID: 1410562272}
     - target: {fileID: 1461019609374701000, guid: 3042b975389f58449a4df42b043fb840, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1410562272}
+      objectReference: {fileID: 1410562270}
     - target: {fileID: 1461019609374701000, guid: 3042b975389f58449a4df42b043fb840, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1461019609374701000, guid: 3042b975389f58449a4df42b043fb840, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButtonPressed
-      objectReference: {fileID: 0}
-    - target: {fileID: 1461019609374701000, guid: 3042b975389f58449a4df42b043fb840, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ChangerPlayerPosition
       objectReference: {fileID: 0}
     - target: {fileID: 1461019609374701000, guid: 3042b975389f58449a4df42b043fb840, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461019609374701000, guid: 3042b975389f58449a4df42b043fb840, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ChangePlayerPosition, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461019609374701000, guid: 3042b975389f58449a4df42b043fb840, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MinigameButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461019609374701000, guid: 3042b975389f58449a4df42b043fb840, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461019609374701000, guid: 3042b975389f58449a4df42b043fb840, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1461019609374701000, guid: 3042b975389f58449a4df42b043fb840, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
