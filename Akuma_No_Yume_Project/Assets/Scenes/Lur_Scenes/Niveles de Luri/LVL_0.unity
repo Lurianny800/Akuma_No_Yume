@@ -37458,8 +37458,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: LVL_1
-  newPlayerPosition: {x: 0, y: 0}
-  changePlayerPosition: 0
+  newPlayerPosition: {x: 112, y: 4.36}
+  changePlayerPosition: 1
 --- !u!1 &1723066212
 GameObject:
   m_ObjectHideFlags: 0

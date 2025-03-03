@@ -18,7 +18,7 @@ public class Lur_PlayerMovement2D : MonoBehaviour
     private bool isGrounded2;
     private bool isGrounded3;
     private Vector3 originalScale;
-    private bool puedeCurarse = false; // Permite saber si está en la zona de curación
+    private bool puedeCurarse = false;
 
     [Header("Chequeo de suelo")]
     public Transform groundCheck;
@@ -27,74 +27,106 @@ public class Lur_PlayerMovement2D : MonoBehaviour
     public float groundCheckDistance = 0.2f;
     public LayerMask groundLayer;
 
+    [Header("Dash")]
+    public float dashSpeed = 12f;
+    public float dashDuration = 0.2f;
+    public float dashCooldown = 1.5f;
+    private bool canDash = false;
+    private bool isDashing = false;
+    private float lastDashTime = -Mathf.Infinity;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         jumpsRemaining = maxJumps;
         originalScale = transform.localScale;
+
+        if (PlayerPrefs.GetInt("ButtonA", 0) == 1 &&
+            PlayerPrefs.GetInt("ButtonB", 0) == 1 &&
+            PlayerPrefs.GetInt("ButtonC", 0) == 1)
+        {
+            canDash = true;
+        }
     }
 
     private void Update()
     {
+        if (isDashing) return;
+
         float moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
-        // Animación de caminar
         anim.SetFloat("Speed", Mathf.Abs(moveInput));
 
-        // Voltear el personaje sin cambiar su tamaño
         if (moveInput > 0)
             transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
         else if (moveInput < 0)
             transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
 
-        // Verificar si está en el suelo
         isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
         isGrounded2 = Physics2D.Raycast(groundCheck2.position, Vector2.down, groundCheckDistance, groundLayer);
         isGrounded3 = Physics2D.Raycast(groundCheck3.position, Vector2.down, groundCheckDistance, groundLayer);
 
         bool onGround = isGrounded || isGrounded2 || isGrounded3;
-
-        // Animación de suelo
         anim.SetBool("isGrounded", onGround);
 
-        // Restablecer saltos si está en el suelo
         if (onGround && rb.velocity.y <= 0)
         {
             jumpsRemaining = maxJumps;
             anim.SetBool("isJumping", false);
 
-            // Reproducir sonido de aterrizaje
-            if (rb.velocity.y < 0) // Solo cuando está cayendo y toca el suelo
+            if (rb.velocity.y < 0)
             {
                 PlayGroundSound();
             }
         }
 
-        // Salto
         if (Input.GetKeyDown(KeyCode.Space) && jumpsRemaining > 0)
         {
             anim.SetBool("isJumping", true);
             anim.SetBool("isGrounded", false);
-
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpsRemaining--;
         }
 
-        // Si presionas F y estás cerca de la torre, intentar curarse
         if (Input.GetKeyDown(KeyCode.F))
         {
             Lur_HUBManager.Instance.IntentarCurarse();
         }
+
+        // DASH con tecla C
+        if (canDash && Input.GetKeyDown(KeyCode.C) && Time.time >= lastDashTime + dashCooldown)
+        {
+            StartCoroutine(Dash());
+        }
     }
+
+    private IEnumerator Dash()
+    {
+        isDashing = true;
+        lastDashTime = Time.time;
+        anim.SetTrigger("Dash"); // Opcional: Agregar animación de dash
+
+        Vector2 dashDirection = new Vector2(transform.localScale.x, 0).normalized;
+        rb.velocity = dashDirection * dashSpeed;
+
+        yield return new WaitForSeconds(dashDuration);
+
+        isDashing = false;
+    }
+
+    public void EnableDash()
+    {
+        canDash = true;
+    }
+
     public void ActivarAnimacionCuracion()
     {
         anim.SetTrigger("Healing");
         StartCoroutine(BloquearMovimiento(2f));
     }
 
-    // Métodos llamados por eventos de animación
     public void PlayWalkSound()
     {
         if (SoundController.Instance != null)
@@ -102,6 +134,7 @@ public class Lur_PlayerMovement2D : MonoBehaviour
             SoundController.Instance.PlaySound("Walk");
         }
     }
+
     public void PlayJumpSound()
     {
         if (SoundController.Instance != null)
@@ -109,6 +142,7 @@ public class Lur_PlayerMovement2D : MonoBehaviour
             SoundController.Instance.PlaySound("Jump");
         }
     }
+
     public void PlayGroundSound()
     {
         if (SoundController.Instance != null)
@@ -117,21 +151,20 @@ public class Lur_PlayerMovement2D : MonoBehaviour
         }
     }
 
-    // Detectar colisión con el objeto "Logro_V1"
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Coleccionable"))
         {
-            anim.SetTrigger("PickUp"); // Activa la animación
-            rb.velocity = Vector2.zero; // Detiene cualquier movimiento actual
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation; // Congela el movimiento lateral
-            enabled = false; // Desactiva este script
-            StartCoroutine(ReactivarMovimiento()); // Espera y reactiva el script
+            anim.SetTrigger("PickUp");
+            rb.velocity = Vector2.zero;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            enabled = false;
+            StartCoroutine(ReactivarMovimiento());
         }
 
         if (other.CompareTag("Torre"))
         {
-            puedeCurarse = true; // Permite curarse cuando está dentro del collider
+            puedeCurarse = true;
         }
     }
 
@@ -139,28 +172,27 @@ public class Lur_PlayerMovement2D : MonoBehaviour
     {
         if (other.CompareTag("Torre"))
         {
-            puedeCurarse = false; // Ya no puede curarse al salir del collider
+            puedeCurarse = false;
         }
     }
 
     private IEnumerator ReactivarMovimiento()
     {
-        yield return new WaitForSeconds(1.3f);  // Espera a que termine la animación
-
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Descongela el movimiento lateral
-        enabled = true; // Reactiva el script
+        yield return new WaitForSeconds(1.3f);
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        enabled = true;
     }
 
     private IEnumerator BloquearMovimiento(float duracion)
     {
         rb.velocity = Vector2.zero;
         rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-        enabled = false; // Desactiva el script temporalmente
+        enabled = false;
 
-        yield return new WaitForSeconds(duracion); // Espera el tiempo especificado
+        yield return new WaitForSeconds(duracion);
 
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Reactiva movimiento
-        enabled = true; // Reactiva el script
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        enabled = true;
     }
 
     private void OnDrawGizmos()

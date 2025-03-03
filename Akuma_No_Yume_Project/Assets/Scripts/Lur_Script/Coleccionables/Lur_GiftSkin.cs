@@ -19,12 +19,13 @@ public class Lur_GiftSkin : MonoBehaviour
     private Vector3 initialScale;
     private float timer = 0f;
     private Camera mainCamera;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         initialScale = transform.localScale;
-        mainCamera = Camera.main; 
+        mainCamera = Camera.main;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,7 +40,7 @@ public class Lur_GiftSkin : MonoBehaviour
             {
                 animator.SetBool("isPickedUp", true); // Activar animación del sprite
             }
-
+            
             StartCoroutine(AnimatePickup());
         }
     }

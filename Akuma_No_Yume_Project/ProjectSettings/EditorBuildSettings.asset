@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Lur_Scenes/Introducci\xF3n.unity"
     guid: edbb24ab2f31abc409f7322a950dc8d6
+  - enabled: 1
+    path: Assets/Animations/Minijuego_Zamue'/Minijuego_Zamue'.unity
+    guid: 52ab8bee32d085f40a5c7e471dd87046
+  - enabled: 1
+    path: Assets/Scenes/Lur_Scenes/Minijuegos/Lur_Minijuego3.unity
+    guid: ba8d893c167950243a012c18e65c2bec
   m_configObjects: {}
