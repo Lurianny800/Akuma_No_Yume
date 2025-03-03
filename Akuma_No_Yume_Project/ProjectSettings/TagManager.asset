@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - Path
   - Coleccionable
+  - TriggerZone
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -17,9 +19,9 @@ TagManager:
   - Suelo
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Pushable
+  - Obstacle
+  - Player
   - 
   - 
   - 
