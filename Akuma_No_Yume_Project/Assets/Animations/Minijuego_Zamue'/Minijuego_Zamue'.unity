@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 251643984}
   - component: {fileID: 251643985}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Casilla (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12468,7 +12468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561758514}
   - component: {fileID: 1561758515}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Casilla (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12962,7 +12962,7 @@ GameObject:
   - component: {fileID: 1757619318}
   - component: {fileID: 1757619317}
   - component: {fileID: 1757619321}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -13401,7 +13401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1836469230}
   - component: {fileID: 1836469231}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Casilla
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13657,7 +13657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1918828920}
   - component: {fileID: 1918828921}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Casilla (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
